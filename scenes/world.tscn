@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://dpifkgveyaigc"]
+
+[ext_resource type="PackedScene" uid="uid://dg37kjby5ixg0" path="res://scenes/player.tscn" id="2_1ghs5"]
+[ext_resource type="PackedScene" uid="uid://c6lyrsuq40mig" path="res://scenes/test_level.tscn" id="2_83kvo"]
+[ext_resource type="PackedScene" uid="uid://y4th65ssfqyb" path="res://scenes/cart.tscn" id="3_fqeym"]
+[ext_resource type="PackedScene" uid="uid://bh1hudpvpu4jf" path="res://scenes/rock.tscn" id="4_f3nq8"]
+
+[node name="world" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("2_1ghs5")]
+position = Vector2(112, 72)
+
+[node name="TileMapLayer" parent="." instance=ExtResource("2_83kvo")]
+position = Vector2(112, 72)
+
+[node name="cart" parent="." instance=ExtResource("3_fqeym")]
+position = Vector2(176, 72)
+
+[node name="cart2" parent="." instance=ExtResource("3_fqeym")]
+position = Vector2(128, 40)
+facing_left_right = false
+
+[node name="rock" parent="." instance=ExtResource("4_f3nq8")]
+position = Vector2(176, 120)
+
+[node name="rock3" parent="." instance=ExtResource("4_f3nq8")]
+position = Vector2(80, 88)
+
+[node name="rock4" parent="." instance=ExtResource("4_f3nq8")]
+position = Vector2(80, 120)
