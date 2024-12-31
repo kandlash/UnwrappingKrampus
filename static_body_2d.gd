@@ -33,8 +33,29 @@ func _process(delta: float) -> void:
 		move()
 
 func move():
+	var distance
+	$RayCast2D.target_position = direction * 200
+	$RayCast2D.force_raycast_update()
+	if $RayCast2D.is_colliding():
+		distance = position.distance_to($RayCast2D.get_collision_point())
+		
+	var coof = round(distance/16)-1
 	var tween = create_tween()
-	tween.tween_property(self, "position", position + direction * 50, 0.3)
+	tween.tween_property(
+	self,
+	"position",
+	position + direction * 16 * coof,
+	0.2*coof
+	).set_trans(Tween.TRANS_SPRING)
+	tween.tween_callback(end_cart_move)
+
+func end_cart_move():
+	if facing_left_right:
+		enable_top_down()
+		facing_left_right = false
+	else:
+		facing_left_right = true
+		enable_left_right()
 
 func _on_top_area_body_entered(body: Node2D) -> void:
 	if body.name == "Player":

@@ -60,6 +60,8 @@ position = Vector2(16, 0)
 shape = SubResource("CircleShape2D_b2uhi")
 debug_color = Color(0.427088, 0.459018, 1, 0.42)
 
+[node name="RayCast2D" type="RayCast2D" parent="."]
+
 [connection signal="body_entered" from="top_area" to="." method="_on_top_area_body_entered"]
 [connection signal="body_exited" from="top_area" to="." method="_on_top_area_body_exited"]
 [connection signal="body_entered" from="down_area" to="." method="_on_down_area_body_entered"]

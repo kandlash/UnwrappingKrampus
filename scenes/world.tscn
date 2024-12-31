@@ -24,7 +24,7 @@ facing_left_right = false
 position = Vector2(176, 120)
 
 [node name="rock3" parent="." instance=ExtResource("4_f3nq8")]
-position = Vector2(80, 88)
+position = Vector2(96, 72)
 
 [node name="rock4" parent="." instance=ExtResource("4_f3nq8")]
 position = Vector2(80, 120)
