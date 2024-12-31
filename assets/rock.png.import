@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://co0iauuurh65r"
-path="res://.godot/imported/telega_ltop_down.png-59b4ed8a50d2d90bb715fe3530bae0d7.ctex"
+uid="uid://bivqa1iypjmc1"
+path="res://.godot/imported/rock.png-287df246b05da9994798407cdfe616b7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://telega_ltop_down.png"
-dest_files=["res://.godot/imported/telega_ltop_down.png-59b4ed8a50d2d90bb715fe3530bae0d7.ctex"]
+source_file="res://assets/rock.png"
+dest_files=["res://.godot/imported/rock.png-287df246b05da9994798407cdfe616b7.ctex"]
 
 [params]
 

@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://dpifkgveyaigc"]
+[gd_scene load_steps=6 format=3 uid="uid://dpifkgveyaigc"]
 
 [ext_resource type="PackedScene" uid="uid://dg37kjby5ixg0" path="res://scenes/player.tscn" id="2_1ghs5"]
 [ext_resource type="PackedScene" uid="uid://c6lyrsuq40mig" path="res://scenes/test_level.tscn" id="2_83kvo"]
 [ext_resource type="PackedScene" uid="uid://y4th65ssfqyb" path="res://scenes/cart.tscn" id="3_fqeym"]
 [ext_resource type="PackedScene" uid="uid://bh1hudpvpu4jf" path="res://scenes/rock.tscn" id="4_f3nq8"]
+[ext_resource type="PackedScene" uid="uid://gkocld8f8in3" path="res://scenes/furnace.tscn" id="5_3e40l"]
 
 [node name="world" type="Node2D"]
 
@@ -17,7 +18,7 @@ position = Vector2(112, 72)
 position = Vector2(160, 72)
 
 [node name="cart2" parent="." instance=ExtResource("3_fqeym")]
-position = Vector2(128, 40)
+position = Vector2(128, 72)
 facing_left_right = false
 
 [node name="rock" parent="." instance=ExtResource("4_f3nq8")]
@@ -28,3 +29,16 @@ position = Vector2(96, 72)
 
 [node name="rock4" parent="." instance=ExtResource("4_f3nq8")]
 position = Vector2(80, 120)
+
+[node name="furnace" parent="." instance=ExtResource("5_3e40l")]
+position = Vector2(232, 104)
+
+[node name="furnace2" parent="." instance=ExtResource("5_3e40l")]
+position = Vector2(56, 88)
+rotation = 3.14159
+access_direction = Vector2(-1, 0)
+
+[node name="furnace3" parent="." instance=ExtResource("5_3e40l")]
+position = Vector2(128, 16)
+rotation = 4.71239
+access_direction = Vector2(0, -1)

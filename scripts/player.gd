@@ -36,7 +36,11 @@ func move(direction: Vector2):
 	
 	is_moving = true
 	var tween = create_tween()
-	tween.tween_property(self, "position", position + direction * tile_size, 0.1)
+	tween.tween_property(self,
+	 "position",
+	 position + direction * tile_size,
+	 0.15
+	).set_trans(Tween.TRANS_SPRING)
 	tween.tween_callback(set_move_false)
 	
 func snap_to_grid():

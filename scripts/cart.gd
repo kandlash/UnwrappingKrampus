@@ -3,6 +3,8 @@ extends StaticBody2D
 @export var facing_left_right = true
 var can_be_moved = false
 var direction := Vector2.ZERO
+var tile_size = 16
+var raydistance = 200
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	if facing_left_right:
@@ -29,22 +31,23 @@ func enable_top_down():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("action") and can_be_moved:
-		print('moving!')
 		move()
+
 
 func move():
 	var distance
-	$RayCast2D.target_position = direction * 200
+	$RayCast2D.target_position = direction * raydistance
 	$RayCast2D.force_raycast_update()
 	if $RayCast2D.is_colliding():
 		distance = position.distance_to($RayCast2D.get_collision_point())
-		
-	var coof = round(distance/16)-1
+	if distance < tile_size:
+		return
+	var coof = round(distance/tile_size)-1
 	var tween = create_tween()
 	tween.tween_property(
 	self,
 	"position",
-	position + direction * 16 * coof,
+	position + direction * tile_size * coof,
 	0.2*coof
 	).set_trans(Tween.TRANS_SPRING)
 	tween.tween_callback(end_cart_move)
@@ -78,7 +81,6 @@ func _on_down_area_body_entered(body: Node2D) -> void:
 func _on_down_area_body_exited(body: Node2D) -> void:
 	if body.name == "Player":
 		can_be_moved = false
-		direction = Vector2.ZERO
 
 
 func _on_left_area_body_entered(body: Node2D) -> void:
@@ -90,7 +92,6 @@ func _on_left_area_body_entered(body: Node2D) -> void:
 func _on_left_area_body_exited(body: Node2D) -> void:
 	if body.name == "Player":
 		can_be_moved = false
-		direction = Vector2.ZERO
 
 
 func _on_right_area_body_entered(body: Node2D) -> void:
@@ -102,4 +103,3 @@ func _on_right_area_body_entered(body: Node2D) -> void:
 func _on_right_area_body_exited(body: Node2D) -> void:
 	if body.name == "Player":
 		can_be_moved = false
-		direction = Vector2.ZERO

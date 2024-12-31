@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://tn2rm06ixnvb"
-path="res://.godot/imported/telega_left_right.png-dfd813d508ec6a432cc9e4ade0a14d99.ctex"
+uid="uid://co0iauuurh65r"
+path="res://.godot/imported/telega_ltop_down.png-aea66c1dd56217f50167e0fb3abd0c0f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://telega_left_right.png"
-dest_files=["res://.godot/imported/telega_left_right.png-dfd813d508ec6a432cc9e4ade0a14d99.ctex"]
+source_file="res://assets/telega_ltop_down.png"
+dest_files=["res://.godot/imported/telega_ltop_down.png-aea66c1dd56217f50167e0fb3abd0c0f.ctex"]
 
 [params]
 
