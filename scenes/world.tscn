@@ -14,7 +14,7 @@ position = Vector2(112, 72)
 position = Vector2(112, 72)
 
 [node name="cart" parent="." instance=ExtResource("3_fqeym")]
-position = Vector2(176, 72)
+position = Vector2(160, 72)
 
 [node name="cart2" parent="." instance=ExtResource("3_fqeym")]
 position = Vector2(128, 40)
