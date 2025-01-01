@@ -1,5 +1,5 @@
 join test_character right
 test_character: hello!
 - hi....
-- hi
+- the world!
 [signal arg="level_end"]

@@ -1,0 +1,68 @@
+[gd_scene load_steps=8 format=3 uid="uid://bkrbnia3b8jjy"]
+
+[ext_resource type="Script" path="res://scripts/movable_obstacle.gd" id="1_857vp"]
+[ext_resource type="Texture2D" uid="uid://clhwcjrfsp4c1" path="res://assets/movable_obstacle.png" id="1_n2nbw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0wkm7"]
+size = Vector2(16, 16)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gwepm"]
+radius = 5.09902
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4lw5i"]
+radius = 5.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jbs4y"]
+radius = 5.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ewme0"]
+radius = 5.0
+
+[node name="MovableObstacle" type="StaticBody2D"]
+script = ExtResource("1_857vp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_0wkm7")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_n2nbw")
+
+[node name="top_area" type="Area2D" parent="."]
+position = Vector2(0, -16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="top_area"]
+shape = SubResource("CircleShape2D_gwepm")
+debug_color = Color(0.427088, 0.459018, 1, 0.42)
+
+[node name="down_area" type="Area2D" parent="."]
+position = Vector2(0, 16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="down_area"]
+shape = SubResource("CircleShape2D_4lw5i")
+debug_color = Color(0.427088, 0.459018, 1, 0.42)
+
+[node name="left_area" type="Area2D" parent="."]
+position = Vector2(-16, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="left_area"]
+shape = SubResource("CircleShape2D_jbs4y")
+debug_color = Color(0.427088, 0.459018, 1, 0.42)
+
+[node name="right_area" type="Area2D" parent="."]
+position = Vector2(16, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="right_area"]
+shape = SubResource("CircleShape2D_ewme0")
+debug_color = Color(0.427088, 0.459018, 1, 0.42)
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+target_position = Vector2(0, 16)
+
+[connection signal="body_entered" from="top_area" to="." method="_on_top_area_body_entered"]
+[connection signal="body_exited" from="top_area" to="." method="_on_top_area_body_exited"]
+[connection signal="body_entered" from="down_area" to="." method="_on_down_area_body_entered"]
+[connection signal="body_exited" from="down_area" to="." method="_on_down_area_body_exited"]
+[connection signal="body_entered" from="left_area" to="." method="_on_left_area_body_entered"]
+[connection signal="body_exited" from="left_area" to="." method="_on_left_area_body_exited"]
+[connection signal="body_entered" from="right_area" to="." method="_on_right_area_body_entered"]
+[connection signal="body_exited" from="right_area" to="." method="_on_right_area_body_exited"]

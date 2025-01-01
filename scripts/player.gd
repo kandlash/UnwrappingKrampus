@@ -5,6 +5,10 @@ const SPEED = 300.0
 const step_size = 16
 var is_moving = false
 var tile_size = 16
+@onready var start_delay := $start_delay
+
+func _ready() -> void:
+	set_physics_process(false)
 
 func _physics_process(delta: float) -> void:
 	
@@ -48,3 +52,7 @@ func snap_to_grid():
 func set_move_false():
 	is_moving = false
 	snap_to_grid()
+
+
+func _on_start_delay_timeout() -> void:
+	set_physics_process(true)

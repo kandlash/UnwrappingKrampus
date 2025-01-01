@@ -13,6 +13,8 @@ func _ready() -> void:
 	Dialogic.signal_event.connect(_on_dialogic_signal)
 	if start_timeline != "None":
 		$DialogueManager.play_diaologue(start_timeline)
+	else:
+		$Player.start_delay.start()
 
 func update_steps():
 	if Globals.level_steps - 1 > 0:
@@ -46,4 +48,4 @@ func _on_dialogic_signal(argument: String):
 	if argument == "level_end":
 		start_next_level()
 	elif argument == "dialog_end":
-		$Player.set_physics_process(true)
+		$Player.start_delay.start()
