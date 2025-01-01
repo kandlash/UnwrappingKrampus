@@ -32,12 +32,18 @@ func update_carts():
 		if end_timeline != "None":
 			$Player.set_physics_process(false)
 			$DialogueManager.play_diaologue(end_timeline)
+		else:
+			start_next_level()
 	else:
 		Globals.level_carts -= 1
 
+func start_next_level():
+	Transition.transition()
+	await Transition.on_transition_finished
+	get_tree().change_scene_to_file(next_level)
 
 func _on_dialogic_signal(argument: String):
-	if argument == "end":
-		Transition.transition()
-		await Transition.on_transition_finished
-		get_tree().change_scene_to_file(next_level)
+	if argument == "level_end":
+		start_next_level()
+	elif argument == "dialog_end":
+		$Player.set_physics_process(true)

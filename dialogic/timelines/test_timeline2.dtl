@@ -1,0 +1,4 @@
+join test_character right
+test_character: Ok, this is more complecated....
+test_character: Ganbarou!!!
+[signal arg="dialog_end"]

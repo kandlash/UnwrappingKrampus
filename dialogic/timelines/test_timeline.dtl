@@ -1,5 +1,5 @@
-join test_character left
-hello!
+join test_character right
+test_character: hello!
 - hi....
 - hi
-[signal arg="end"]
+[signal arg="level_end"]
