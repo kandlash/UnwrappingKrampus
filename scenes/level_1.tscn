@@ -8,6 +8,7 @@
 [node name="Level1" instance=ExtResource("1_ixx7u")]
 level_steps = 40
 level_carts = 2
+end_timeline = "test_timeline"
 next_level = "res://scenes/level_2.tscn"
 level_num = 2
 

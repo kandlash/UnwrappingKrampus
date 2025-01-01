@@ -13,7 +13,6 @@
 [node name="LevelBase" type="Node2D"]
 script = ExtResource("1_30iru")
 level_carts = 1
-end_timeline = "test_timeline"
 
 [node name="furnace" parent="." instance=ExtResource("3_16v7n")]
 position = Vector2(144, 80)
@@ -38,3 +37,9 @@ script = ExtResource("8_hs4lo")
 [node name="Camera2D" type="Camera2D" parent="."]
 anchor_mode = 0
 script = ExtResource("9_1ykvf")
+
+[node name="StartLevelDelay" type="Timer" parent="."]
+wait_time = 0.8
+one_shot = true
+
+[connection signal="timeout" from="StartLevelDelay" to="." method="_on_start_level_delay_timeout"]

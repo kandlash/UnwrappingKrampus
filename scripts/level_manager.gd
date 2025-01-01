@@ -50,7 +50,9 @@ func update_carts():
 			set_process(false)
 			$DialogueManager.play_diaologue(end_timeline)
 		else:
-			start_next_level()
+			$StartLevelDelay.start()
+			$Player.set_physics_process(false)
+			set_process(false)
 	else:
 		Globals.level_carts -= 1
 
@@ -66,3 +68,7 @@ func _on_dialogic_signal(argument: String):
 	elif argument == "dialog_end":
 		set_process(true)
 		$Player.start_delay.start()
+
+
+func _on_start_level_delay_timeout() -> void:
+	start_next_level()

@@ -6,7 +6,6 @@
 [node name="Level_2" instance=ExtResource("1_cwsxx")]
 level_steps = 70
 start_timeline = "test_timeline2"
-end_timeline = "None"
 next_level = "res://scenes/level_1.tscn"
 level_num = 1
 
