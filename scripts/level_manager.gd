@@ -29,10 +29,15 @@ func update_steps():
 	elif Globals.level_steps - 1 <= 0 and Globals.level_carts != 0:
 		$Player.set_physics_process(false)
 		Globals.level_steps -= 1
+		if Globals.level_steps < 0:
+			Globals.level_steps = 0
 		$ui.update_steps()
 		reload_level()
 
 func reload_level():
+	for node in get_children():
+		node.set_process(false)
+		node.set_physics_process(false)
 	Transition.transition()
 	await Transition.on_transition_finished
 	get_tree().reload_current_scene()

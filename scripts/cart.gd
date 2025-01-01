@@ -5,6 +5,7 @@ var can_be_moved = false
 var direction := Vector2.ZERO
 var tile_size = 16
 var raydistance = 200
+@onready var camera := $"../Camera2D"
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	if facing_left_right:
@@ -35,6 +36,7 @@ func _process(delta: float) -> void:
 
 
 func move():
+	camera.set_shake(0.1)
 	var distance
 	$RayCast2D.target_position = direction * raydistance
 	$RayCast2D.force_raycast_update()
@@ -54,6 +56,7 @@ func move():
 	tween.tween_callback(end_cart_move)
 
 func end_cart_move():
+	camera.set_shake(0.15)
 	get_parent().get_node("Player").set_physics_process(true)
 	get_parent().update_steps()
 	

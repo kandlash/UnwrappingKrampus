@@ -6,6 +6,7 @@ var move_direction := Vector2.ZERO
 var step : int
 var can_be_moved = false
 @onready var raycast := $RayCast2D
+@onready var camera := $"../Camera2D"
 
 func _ready() -> void:
 	step = tile_size * step_coof
@@ -16,6 +17,7 @@ func _process(delta: float) -> void:
 		move()
 	
 func move():
+	camera.set_shake(0.1)
 	var level = get_parent()
 	var player = level.get_node("Player")
 	player.set_physics_process(false)
@@ -30,6 +32,7 @@ func move():
 	tween.tween_callback(end_move)
 
 func end_move():
+	camera.set_shake(0.1)
 	var player = get_parent().get_node("Player")
 	player.set_physics_process(true)
 

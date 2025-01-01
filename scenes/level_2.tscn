@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://bkrbnia3b8jjy" path="res://scenes/movable_obstacle.tscn" id="2_47x8u"]
 
 [node name="Level_2" instance=ExtResource("1_cwsxx")]
-level_steps = 70
+level_steps = 20
 start_timeline = "test_timeline2"
 end_timeline = "None"
 next_level = "res://scenes/level_1.tscn"
