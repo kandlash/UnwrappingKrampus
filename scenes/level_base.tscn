@@ -33,3 +33,6 @@ position = Vector2(136, 80)
 
 [node name="DialogueManager" type="Node2D" parent="."]
 script = ExtResource("8_hs4lo")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0
