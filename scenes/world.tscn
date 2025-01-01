@@ -1,5 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://dpifkgveyaigc"]
+[gd_scene load_steps=7 format=3 uid="uid://dpifkgveyaigc"]
 
+[ext_resource type="Script" path="res://world.gd" id="1_87b32"]
 [ext_resource type="PackedScene" uid="uid://dg37kjby5ixg0" path="res://scenes/player.tscn" id="2_1ghs5"]
 [ext_resource type="PackedScene" uid="uid://c6lyrsuq40mig" path="res://scenes/test_level.tscn" id="2_83kvo"]
 [ext_resource type="PackedScene" uid="uid://y4th65ssfqyb" path="res://scenes/cart.tscn" id="3_fqeym"]
@@ -7,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://gkocld8f8in3" path="res://scenes/furnace.tscn" id="5_3e40l"]
 
 [node name="world" type="Node2D"]
+script = ExtResource("1_87b32")
 
 [node name="Player" parent="." instance=ExtResource("2_1ghs5")]
 position = Vector2(112, 72)
