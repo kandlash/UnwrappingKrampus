@@ -15,8 +15,8 @@ position = Vector2(120, 96)
 [node name="cart" parent="." index="3"]
 facing_left_right = false
 
-[node name="MovableObstacle" parent="." index="8" instance=ExtResource("2_47x8u")]
+[node name="MovableObstacle" parent="." index="9" instance=ExtResource("2_47x8u")]
 position = Vector2(120, 128)
 
-[node name="MovableObstacle2" parent="." index="9" instance=ExtResource("2_47x8u")]
+[node name="MovableObstacle2" parent="." index="10" instance=ExtResource("2_47x8u")]
 position = Vector2(120, 32)

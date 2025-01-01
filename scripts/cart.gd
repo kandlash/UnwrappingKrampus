@@ -20,7 +20,11 @@ func enable_left_right():
 	$down_area.monitoring = false
 	$left_area.monitoring = true
 	$right_area.monitoring = true
-
+	$left_particle.emitting = true
+	$right_particle.emitting = true
+	$top_particle.emitting = false
+	$down_particle.emitting = false
+	
 func enable_top_down():
 	$left_right.visible = false
 	$top_down.visible = true
@@ -28,6 +32,10 @@ func enable_top_down():
 	$down_area.monitoring = true
 	$left_area.monitoring = false
 	$right_area.monitoring = false
+	$left_particle.emitting = false
+	$right_particle.emitting = false
+	$top_particle.emitting = true
+	$down_particle.emitting = true
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -71,42 +79,65 @@ func _on_top_area_body_entered(body: Node2D) -> void:
 	if body.name == "Player":
 		direction = Vector2(0, 1)
 		can_be_moved = true
+		ensure_unique_material($top_down)
+		$top_down.material.set_shader_parameter("line_thickness", 0.5)
 
 
 func _on_top_area_body_exited(body: Node2D) -> void:
 	if body.name == "Player":
 		can_be_moved = false
 		direction = Vector2.ZERO
+		ensure_unique_material($top_down)
+		$top_down.material.set_shader_parameter("line_thickness", 0)
 
 
 func _on_down_area_body_entered(body: Node2D) -> void:
 	if body.name == "Player":
 		can_be_moved = true
 		direction = Vector2(0, -1)
+		ensure_unique_material($top_down)
+		$top_down.material.set_shader_parameter("line_thickness", 0.5)
 
 
 func _on_down_area_body_exited(body: Node2D) -> void:
 	if body.name == "Player":
 		can_be_moved = false
+		ensure_unique_material($top_down)
+		$top_down.material.set_shader_parameter("line_thickness", 0)
 
 
 func _on_left_area_body_entered(body: Node2D) -> void:
 	if body.name == "Player":
 		can_be_moved = true
 		direction = Vector2(1, 0)
+		ensure_unique_material($left_right)
+		$left_right.material.set_shader_parameter("line_thickness", 0.5)
 
 
 func _on_left_area_body_exited(body: Node2D) -> void:
 	if body.name == "Player":
 		can_be_moved = false
+		ensure_unique_material($left_right)
+		$left_right.material.set_shader_parameter("line_thickness", 0)
 
 
 func _on_right_area_body_entered(body: Node2D) -> void:
 	if body.name == "Player":
 		can_be_moved = true
 		direction = Vector2(-1, 0)
+		ensure_unique_material($left_right)
+		$left_right.material.set_shader_parameter("line_thickness", 0.5)
 
 
 func _on_right_area_body_exited(body: Node2D) -> void:
 	if body.name == "Player":
 		can_be_moved = false
+		ensure_unique_material($left_right)
+		$left_right.material.set_shader_parameter("line_thickness", 0)
+
+
+
+func ensure_unique_material(sprite: Sprite2D) -> void:
+	if sprite.material is ShaderMaterial and sprite.material.resource_local_to_scene == false:
+		sprite.material = sprite.material.duplicate()
+		sprite.material.resource_local_to_scene = true

@@ -5,6 +5,7 @@ const SPEED = 300.0
 const step_size = 16
 var is_moving = false
 var tile_size = 16
+var particles_rotation = 0
 @onready var start_delay := $start_delay
 
 func _ready() -> void:
@@ -15,15 +16,19 @@ func _physics_process(delta: float) -> void:
 	var direction = Vector2.ZERO
 	if Input.is_action_just_pressed("move_up"):
 		direction.y = -1
+		particles_rotation = 90
 		move(direction)
 	elif Input.is_action_just_pressed("move_down"):
 		direction.y = 1
+		particles_rotation = 270
 		move(direction)
 	elif Input.is_action_just_pressed("move_left"):
 		direction.x = -1
+		particles_rotation = 0
 		move(direction)
 	elif Input.is_action_just_pressed("move_right"):
 		direction.x = 1
+		particles_rotation = 180
 		move(direction)
 
 func move(direction: Vector2):
@@ -34,7 +39,6 @@ func move(direction: Vector2):
 	$RayCast2D.force_raycast_update()
 	if $RayCast2D.is_colliding():
 		return
-	
 	is_moving = true
 	get_parent().update_steps()
 	var tween = create_tween()

@@ -47,31 +47,56 @@ func try_access_move(direction):
 func _on_top_area_body_entered(body: Node2D) -> void:
 	if body.name == "Player":
 		try_access_move(Vector2(0, step))
+		ensure_unique_material($Sprite2D)
+		$Sprite2D.material.set_shader_parameter("line_thickness", 0.5)
 
 func _on_top_area_body_exited(body: Node2D) -> void:
-	can_be_moved = false
+	if body.name == "Player":
+		can_be_moved = false
+		ensure_unique_material($Sprite2D)
+		$Sprite2D.material.set_shader_parameter("line_thickness", 0)
 
 
 func _on_down_area_body_entered(body: Node2D) -> void:
 	if body.name == "Player":
 		try_access_move(Vector2(0, -step))
+		ensure_unique_material($Sprite2D)
+		$Sprite2D.material.set_shader_parameter("line_thickness", 0.5)
 
 
 func _on_down_area_body_exited(body: Node2D) -> void:
-	can_be_moved = false
+	if body.name == "Player":
+		can_be_moved = false
+		ensure_unique_material($Sprite2D)
+		$Sprite2D.material.set_shader_parameter("line_thickness", 0)
 
 
 func _on_left_area_body_entered(body: Node2D) -> void:
 	if body.name == "Player":
 		try_access_move(Vector2(step, 0))
+		ensure_unique_material($Sprite2D)
+		$Sprite2D.material.set_shader_parameter("line_thickness", 0.5)
 
 func _on_left_area_body_exited(body: Node2D) -> void:
-	can_be_moved = false
+	if body.name == "Player":
+		can_be_moved = false
+		ensure_unique_material($Sprite2D)
+		$Sprite2D.material.set_shader_parameter("line_thickness", 0)
 
 
 func _on_right_area_body_entered(body: Node2D) -> void:
 	if body.name == "Player":
 		try_access_move(Vector2(-step, 0))
+		ensure_unique_material($Sprite2D)
+		$Sprite2D.material.set_shader_parameter("line_thickness", 0.5)
 
 func _on_right_area_body_exited(body: Node2D) -> void:
-	can_be_moved = false
+	if body.name == "Player":
+		can_be_moved = false
+		ensure_unique_material($Sprite2D)
+		$Sprite2D.material.set_shader_parameter("line_thickness", 0)
+		
+func ensure_unique_material(sprite: Sprite2D) -> void:
+	if sprite.material is ShaderMaterial and sprite.material.resource_local_to_scene == false:
+		sprite.material = sprite.material.duplicate()
+		sprite.material.resource_local_to_scene = true

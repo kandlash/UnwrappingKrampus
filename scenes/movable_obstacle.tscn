@@ -1,22 +1,28 @@
-[gd_scene load_steps=8 format=3 uid="uid://bkrbnia3b8jjy"]
+[gd_scene load_steps=10 format=3 uid="uid://bkrbnia3b8jjy"]
 
 [ext_resource type="Script" path="res://scripts/movable_obstacle.gd" id="1_857vp"]
 [ext_resource type="Texture2D" uid="uid://clhwcjrfsp4c1" path="res://assets/movable_obstacle.png" id="1_n2nbw"]
+[ext_resource type="Shader" path="res://shaders/cart.gdshader" id="2_t4mtd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0wkm7"]
 size = Vector2(16, 16)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_gwepm"]
-radius = 5.09902
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_v7vjf"]
+shader = ExtResource("2_t4mtd")
+shader_parameter/line_color = Color(1, 1, 1, 1)
+shader_parameter/line_thickness = 0.0
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_4lw5i"]
-radius = 5.0
+[sub_resource type="CircleShape2D" id="CircleShape2D_kq5su"]
+radius = 6.0
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_jbs4y"]
-radius = 5.0
+[sub_resource type="CircleShape2D" id="CircleShape2D_cv2k0"]
+radius = 6.0
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_ewme0"]
-radius = 5.0
+[sub_resource type="CircleShape2D" id="CircleShape2D_f84su"]
+radius = 6.08276
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_w85oh"]
+radius = 6.0
 
 [node name="MovableObstacle" type="StaticBody2D"]
 script = ExtResource("1_857vp")
@@ -25,34 +31,35 @@ script = ExtResource("1_857vp")
 shape = SubResource("RectangleShape2D_0wkm7")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_v7vjf")
 texture = ExtResource("1_n2nbw")
 
 [node name="top_area" type="Area2D" parent="."]
 position = Vector2(0, -16)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="top_area"]
-shape = SubResource("CircleShape2D_gwepm")
+shape = SubResource("CircleShape2D_kq5su")
 debug_color = Color(0.427088, 0.459018, 1, 0.42)
 
 [node name="down_area" type="Area2D" parent="."]
 position = Vector2(0, 16)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="down_area"]
-shape = SubResource("CircleShape2D_4lw5i")
+shape = SubResource("CircleShape2D_cv2k0")
 debug_color = Color(0.427088, 0.459018, 1, 0.42)
 
 [node name="left_area" type="Area2D" parent="."]
 position = Vector2(-16, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="left_area"]
-shape = SubResource("CircleShape2D_jbs4y")
+shape = SubResource("CircleShape2D_f84su")
 debug_color = Color(0.427088, 0.459018, 1, 0.42)
 
 [node name="right_area" type="Area2D" parent="."]
 position = Vector2(16, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="right_area"]
-shape = SubResource("CircleShape2D_ewme0")
+shape = SubResource("CircleShape2D_w85oh")
 debug_color = Color(0.427088, 0.459018, 1, 0.42)
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
