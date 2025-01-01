@@ -21,6 +21,7 @@ config/icon="res://assets/icon.svg"
 Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 Globals="*res://scripts/globals.gd"
 Transition="*res://scenes/canvas_layer.tscn"
+SuccessTransition="*res://scenes/success_canvas.tscn"
 
 [dialogic]
 

@@ -5,6 +5,7 @@ extends Node2D
 @export var start_timeline: String = "None"
 @export var end_timeline: String = "None"
 @export var next_level : String
+@export var level_num : int
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	Globals.level_carts = level_carts
@@ -40,8 +41,8 @@ func update_carts():
 		Globals.level_carts -= 1
 
 func start_next_level():
-	Transition.transition()
-	await Transition.on_transition_finished
+	SuccessTransition.transition(level_num)
+	await SuccessTransition.on_transition_finished
 	get_tree().change_scene_to_file(next_level)
 
 func _on_dialogic_signal(argument: String):

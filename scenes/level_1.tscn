@@ -9,6 +9,7 @@
 level_steps = 40
 level_carts = 2
 next_level = "res://scenes/level_2.tscn"
+level_num = 2
 
 [node name="furnace" parent="." index="0"]
 position = Vector2(160, 80)
