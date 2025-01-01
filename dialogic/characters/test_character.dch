@@ -10,14 +10,14 @@
 "style": "",
 "suffix": ""
 },
-"default_portrait": "standard",
+"default_portrait": "New portrait",
 "description": "",
-"display_name": "Krampus",
+"display_name": "test_character",
 "mirror": false,
-"nicknames": [""],
+"nicknames": ["Krampus-tyan"],
 "offset": Vector2(0, 0),
 "portraits": {
-"standard": {
+"New portrait": {
 "export_overrides": {
 "image": "\"res://assets/krampus-tyan.png\""
 },
