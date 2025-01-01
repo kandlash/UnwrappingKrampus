@@ -43,7 +43,6 @@ func move():
 	if distance < tile_size:
 		return
 	get_parent().get_node("Player").set_physics_process(false)
-	get_parent().update_steps()
 	var coof = round(distance/tile_size)-1
 	var tween = create_tween()
 	tween.tween_property(
@@ -56,6 +55,8 @@ func move():
 
 func end_cart_move():
 	get_parent().get_node("Player").set_physics_process(true)
+	get_parent().update_steps()
+	
 	if facing_left_right:
 		enable_top_down()
 		facing_left_right = false
