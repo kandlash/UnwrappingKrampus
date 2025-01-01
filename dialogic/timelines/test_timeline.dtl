@@ -2,3 +2,4 @@ join test_character left
 hello!
 - hi....
 - hi
+[signal arg="end"]

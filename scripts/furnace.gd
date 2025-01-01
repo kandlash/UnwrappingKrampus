@@ -21,4 +21,5 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 	 Vector2.ZERO,
 	 0.5
 	).set_trans(Tween.TRANS_BOUNCE)
+	tween.tween_callback(get_parent().update_carts)
 	

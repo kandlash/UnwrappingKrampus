@@ -1,0 +1,35 @@
+[gd_scene load_steps=9 format=3 uid="uid://dllpe8nup0y6k"]
+
+[ext_resource type="Script" path="res://scripts/level_manager.gd" id="1_30iru"]
+[ext_resource type="PackedScene" uid="uid://dg37kjby5ixg0" path="res://scenes/player.tscn" id="1_emuhu"]
+[ext_resource type="PackedScene" uid="uid://bh1hudpvpu4jf" path="res://scenes/rock.tscn" id="2_cnt83"]
+[ext_resource type="PackedScene" uid="uid://gkocld8f8in3" path="res://scenes/furnace.tscn" id="3_16v7n"]
+[ext_resource type="PackedScene" uid="uid://y4th65ssfqyb" path="res://scenes/cart.tscn" id="4_15r8o"]
+[ext_resource type="PackedScene" uid="uid://c6lyrsuq40mig" path="res://scenes/test_level.tscn" id="5_4y1fr"]
+[ext_resource type="PackedScene" uid="uid://bhen6wmyofvoh" path="res://scenes/ui.tscn" id="7_qdn46"]
+[ext_resource type="Script" path="res://scripts/dialogue_manager.gd" id="8_hs4lo"]
+
+[node name="LevelBase" type="Node2D"]
+script = ExtResource("1_30iru")
+level_carts = 1
+end_timeline = "test_timeline"
+
+[node name="furnace" parent="." instance=ExtResource("3_16v7n")]
+position = Vector2(144, 80)
+
+[node name="Player" parent="." instance=ExtResource("1_emuhu")]
+position = Vector2(104, 64)
+
+[node name="rock" parent="." instance=ExtResource("2_cnt83")]
+position = Vector2(104, 128)
+
+[node name="cart" parent="." instance=ExtResource("4_15r8o")]
+position = Vector2(104, 80)
+
+[node name="TileMapLayer" parent="." instance=ExtResource("5_4y1fr")]
+position = Vector2(136, 80)
+
+[node name="ui" parent="." instance=ExtResource("7_qdn46")]
+
+[node name="DialogueManager" type="Node2D" parent="."]
+script = ExtResource("8_hs4lo")

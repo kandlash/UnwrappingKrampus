@@ -2,14 +2,15 @@ extends Node2D
 
 @export var level_steps = 10
 @export var level_carts = 2
+@export var start_timeline: String = "None"
+@export var end_timeline: String = "None"
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	Globals.level_carts = level_carts
 	Globals.level_steps = level_steps
 	$ui.update_steps()
-	Dialogic.signal_event.connect(_on_dialogic_signal)
-	$Player.set_physics_process(false)
-	Dialogic.start("test_timeline")
+	if start_timeline != "None":
+		$DialogueManager.play_diaologue(start_timeline)
 
 func update_steps():
 	if Globals.level_steps - 1 >= 0:
@@ -20,7 +21,8 @@ func update_steps():
 
 func update_carts():
 	if Globals.level_carts - 1 == 0:
-		print('win!')
+		if end_timeline != "None":
+			$DialogueManager.play_diaologue(end_timeline)
 	else:
 		Globals.level_carts -= 1
 

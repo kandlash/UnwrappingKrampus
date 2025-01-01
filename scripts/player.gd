@@ -6,9 +6,6 @@ const step_size = 16
 var is_moving = false
 var tile_size = 16
 
-#func _ready() -> void:
-	#snap_to_grid()
-
 func _physics_process(delta: float) -> void:
 	
 	var direction = Vector2.ZERO
@@ -35,6 +32,7 @@ func move(direction: Vector2):
 		return
 	
 	is_moving = true
+	get_parent().update_steps()
 	var tween = create_tween()
 	tween.tween_property(self,
 	 "position",

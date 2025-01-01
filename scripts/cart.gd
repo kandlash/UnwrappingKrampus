@@ -42,6 +42,8 @@ func move():
 		distance = position.distance_to($RayCast2D.get_collision_point())
 	if distance < tile_size:
 		return
+	get_parent().get_node("Player").set_physics_process(false)
+	get_parent().update_steps()
 	var coof = round(distance/tile_size)-1
 	var tween = create_tween()
 	tween.tween_property(
@@ -53,6 +55,7 @@ func move():
 	tween.tween_callback(end_cart_move)
 
 func end_cart_move():
+	get_parent().get_node("Player").set_physics_process(true)
 	if facing_left_right:
 		enable_top_down()
 		facing_left_right = false

@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://dpifkgveyaigc"]
+[gd_scene load_steps=8 format=3 uid="uid://dpifkgveyaigc"]
 
 [ext_resource type="Script" path="res://world.gd" id="1_87b32"]
 [ext_resource type="PackedScene" uid="uid://dg37kjby5ixg0" path="res://scenes/player.tscn" id="2_1ghs5"]
@@ -6,9 +6,11 @@
 [ext_resource type="PackedScene" uid="uid://y4th65ssfqyb" path="res://scenes/cart.tscn" id="3_fqeym"]
 [ext_resource type="PackedScene" uid="uid://bh1hudpvpu4jf" path="res://scenes/rock.tscn" id="4_f3nq8"]
 [ext_resource type="PackedScene" uid="uid://gkocld8f8in3" path="res://scenes/furnace.tscn" id="5_3e40l"]
+[ext_resource type="PackedScene" uid="uid://bhen6wmyofvoh" path="res://scenes/ui.tscn" id="7_xpv3m"]
 
 [node name="world" type="Node2D"]
 script = ExtResource("1_87b32")
+level_steps = 20
 
 [node name="Player" parent="." instance=ExtResource("2_1ghs5")]
 position = Vector2(112, 72)
@@ -44,3 +46,5 @@ access_direction = Vector2(-1, 0)
 position = Vector2(128, 16)
 rotation = 4.71239
 access_direction = Vector2(0, -1)
+
+[node name="ui" parent="." instance=ExtResource("7_xpv3m")]
