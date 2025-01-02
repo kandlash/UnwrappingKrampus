@@ -1,12 +1,13 @@
-[gd_scene load_steps=5 format=4 uid="uid://dmfigcidttjtb"]
+[gd_scene load_steps=6 format=4 uid="uid://dmfigcidttjtb"]
 
 [ext_resource type="PackedScene" uid="uid://dllpe8nup0y6k" path="res://scenes/levels/level_base.tscn" id="1_7w5uh"]
-[ext_resource type="PackedScene" uid="uid://bh1hudpvpu4jf" path="res://scenes/rock.tscn" id="2_iofoe"]
+[ext_resource type="PackedScene" uid="uid://bh1hudpvpu4jf" path="res://scenes/coal_obstacle.tscn" id="2_iofoe"]
 [ext_resource type="PackedScene" uid="uid://bkrbnia3b8jjy" path="res://scenes/movable_obstacle.tscn" id="3_1v1mi"]
 [ext_resource type="PackedScene" uid="uid://cuhj4oiaa772s" path="res://scenes/torch.tscn" id="4_3ni3j"]
+[ext_resource type="PackedScene" uid="uid://cubody0tud4f" path="res://scenes/candle.tscn" id="5_yxsy3"]
 
 [node name="train_level_3" instance=ExtResource("1_7w5uh")]
-level_steps = 40
+level_steps = 37
 start_timeline = "train_level_3_timeline"
 next_level = "res://scenes/levels/level_1.tscn"
 
@@ -21,44 +22,56 @@ position = Vector2(88, 32)
 [node name="rock4" parent="." index="3" instance=ExtResource("2_iofoe")]
 position = Vector2(120, 128)
 
-[node name="rock5" parent="." index="4" instance=ExtResource("2_iofoe")]
+[node name="rock9" parent="." index="4" instance=ExtResource("2_iofoe")]
+position = Vector2(232, 112)
+
+[node name="rock10" parent="." index="5" instance=ExtResource("2_iofoe")]
+position = Vector2(168, 96)
+
+[node name="rock11" parent="." index="6" instance=ExtResource("2_iofoe")]
+position = Vector2(184, 128)
+
+[node name="rock5" parent="." index="7" instance=ExtResource("2_iofoe")]
 position = Vector2(232, 128)
 
-[node name="rock6" parent="." index="5" instance=ExtResource("2_iofoe")]
+[node name="rock6" parent="." index="8" instance=ExtResource("2_iofoe")]
 position = Vector2(200, 64)
 
-[node name="rock7" parent="." index="6" instance=ExtResource("2_iofoe")]
+[node name="rock7" parent="." index="9" instance=ExtResource("2_iofoe")]
 position = Vector2(248, 48)
 
-[node name="rock8" parent="." index="7" instance=ExtResource("2_iofoe")]
+[node name="rock8" parent="." index="10" instance=ExtResource("2_iofoe")]
 position = Vector2(184, 32)
 
-[node name="cart" parent="." index="8"]
+[node name="cart" parent="." index="11"]
 position = Vector2(120, 64)
 
-[node name="TileMapLayer" parent="." index="9"]
+[node name="TileMapLayer" parent="." index="12"]
 tile_map_data = PackedByteArray("AAD8//z/AAAAAAAAAAD8//3/AAAAAAEAAAD8//7/AAAAAAEAAAD8////AAAAAAEAAAD8/wAAAAAAAAEAAAD8/wEAAAAAAAEAAAD8/wIAAAAAAAEAAAD8/wMAAAAAAAIAAAD9//z/AAABAAAAAAD9//3/AAABAAEAAAD9//7/AAABAAEAAAD9////AAABAAEAAAD9/wAAAAABAAEAAAD9/wEAAAABAAEAAAD9/wIAAAABAAEAAAD9/wMAAAABAAIAAAD+//z/AAABAAAAAAD+//3/AAABAAEAAAD+//7/AAABAAEAAAD+////AAABAAEAAAD+/wAAAAABAAEAAAD+/wEAAAABAAEAAAD+/wIAAAABAAEAAAD+/wMAAAABAAIAAAD///z/AAABAAAAAAD///3/AAABAAEAAAD///7/AAABAAEAAAD/////AAABAAEAAAD//wAAAAABAAEAAAD//wEAAAABAAEAAAD//wIAAAABAAEAAAD//wMAAAABAAIAAAAAAPz/AAABAAAAAAAAAP3/AAABAAEAAAAAAP7/AAABAAEAAAAAAP//AAABAAEAAAAAAAAAAAABAAEAAAAAAAEAAAABAAEAAAAAAAIAAAABAAEAAAAAAAMAAAABAAIAAAABAPz/AAABAAAAAAABAP3/AAABAAEAAAABAP7/AAABAAEAAAABAP//AAABAAEAAAABAAAAAAABAAEAAAABAAEAAAABAAEAAAABAAIAAAABAAEAAAABAAMAAAABAAIAAAACAPz/AAABAAAAAAACAP3/AAABAAEAAAACAP7/AAABAAEAAAACAP//AAABAAEAAAACAAAAAAABAAEAAAACAAEAAAABAAEAAAACAAIAAAABAAEAAAACAAMAAAABAAIAAAADAPz/AAABAAAAAAADAP3/AAABAAEAAAADAP7/AAABAAEAAAADAAAAAAABAAEAAAADAAEAAAABAAEAAAADAAMAAAABAAIAAAD8/wQAAAAAAAMAAAD9/wQAAAABAAMAAAD+/wQAAAABAAMAAAD//wQAAAABAAMAAAAAAAQAAAABAAMAAAABAAQAAAABAAMAAAACAAQAAAABAAMAAAADAAQAAAACAAMAAAADAP//AAABAAEAAAADAAIAAAABAAEAAAAHAAIAAAACAAEAAAAGAAIAAAABAAEAAAAFAAIAAAABAAEAAAAEAAIAAAABAAEAAAAEAAEAAAABAAEAAAAEAAAAAAABAAEAAAAEAP//AAABAAEAAAAEAP7/AAABAAEAAAAEAP3/AAABAAEAAAAFAP3/AAABAAEAAAAGAP3/AAABAAEAAAAHAP3/AAACAAEAAAAHAP7/AAACAAEAAAAHAP//AAACAAEAAAAHAAAAAAACAAEAAAAHAAEAAAACAAEAAAAGAAEAAAABAAEAAAAFAAEAAAABAAEAAAAFAAAAAAABAAEAAAAFAP//AAABAAEAAAAFAP7/AAABAAEAAAAGAP7/AAABAAEAAAAGAP//AAABAAEAAAAGAAAAAAABAAEAAAAEAPz/AAABAAAAAAAFAPz/AAABAAAAAAAGAPz/AAABAAAAAAAHAPz/AAACAAAAAAAHAAMAAAACAAIAAAAGAAMAAAABAAIAAAAFAAMAAAABAAIAAAAEAAMAAAABAAIAAAAEAAQAAAABAAMAAAAFAAQAAAABAAMAAAAGAAQAAAABAAMAAAAHAAQAAAACAAMAAAA=")
 
-[node name="MovableObstacle" parent="." index="14" instance=ExtResource("3_1v1mi")]
+[node name="MovableObstacle" parent="." index="17" instance=ExtResource("3_1v1mi")]
 position = Vector2(88, 64)
 
-[node name="rock2" parent="." index="15" instance=ExtResource("2_iofoe")]
+[node name="rock2" parent="." index="18" instance=ExtResource("2_iofoe")]
 position = Vector2(104, 32)
 
-[node name="rock3" parent="." index="16" instance=ExtResource("2_iofoe")]
+[node name="rock3" parent="." index="19" instance=ExtResource("2_iofoe")]
 position = Vector2(104, 48)
 
-[node name="torch" parent="." index="18" instance=ExtResource("4_3ni3j")]
+[node name="torch" parent="." index="21" instance=ExtResource("4_3ni3j")]
 position = Vector2(88, 80)
 
-[node name="torch2" parent="." index="19" instance=ExtResource("4_3ni3j")]
-position = Vector2(184, 80)
+[node name="candle" parent="." index="22" instance=ExtResource("5_yxsy3")]
+position = Vector2(184, 64)
 
-[node name="torch3" parent="." index="20" instance=ExtResource("4_3ni3j")]
-position = Vector2(248, 64)
+[node name="candle2" parent="." index="23" instance=ExtResource("5_yxsy3")]
+position = Vector2(232, 48)
+candle_amount = 2
 
-[node name="torch4" parent="." index="21" instance=ExtResource("4_3ni3j")]
-position = Vector2(216, 128)
+[node name="candle3" parent="." index="24" instance=ExtResource("5_yxsy3")]
+position = Vector2(232, 96)
+candle_amount = 3
 
-[node name="torch5" parent="." index="22" instance=ExtResource("4_3ni3j")]
-position = Vector2(120, 112)
+[node name="candle4" parent="." index="25" instance=ExtResource("5_yxsy3")]
+position = Vector2(184, 96)
+candle_amount = 4

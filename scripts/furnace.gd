@@ -10,6 +10,9 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 	if cart.direction != access_direction:
 		return
 	get_parent().update_carts()
+	$PointLight2D.enabled = false
+	$CPUParticles2D.emitting = false
+	$shadow.visible = false
 	var tween = create_tween()
 	tween.tween_property(cart,
 	 "position",

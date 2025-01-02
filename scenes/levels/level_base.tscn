@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scripts/level_manager.gd" id="1_30iru"]
 [ext_resource type="PackedScene" uid="uid://dg37kjby5ixg0" path="res://scenes/player.tscn" id="1_emuhu"]
-[ext_resource type="PackedScene" uid="uid://bh1hudpvpu4jf" path="res://scenes/rock.tscn" id="2_cnt83"]
+[ext_resource type="PackedScene" uid="uid://bh1hudpvpu4jf" path="res://scenes/coal_obstacle.tscn" id="2_cnt83"]
 [ext_resource type="PackedScene" uid="uid://gkocld8f8in3" path="res://scenes/furnace.tscn" id="3_16v7n"]
 [ext_resource type="PackedScene" uid="uid://y4th65ssfqyb" path="res://scenes/cart.tscn" id="4_15r8o"]
 [ext_resource type="PackedScene" uid="uid://c6lyrsuq40mig" path="res://scenes/test_level.tscn" id="5_4y1fr"]
@@ -27,6 +27,7 @@ position = Vector2(104, 128)
 position = Vector2(104, 80)
 
 [node name="TileMapLayer" parent="." instance=ExtResource("5_4y1fr")]
+z_index = -2
 position = Vector2(136, 80)
 
 [node name="ui" parent="." instance=ExtResource("7_qdn46")]

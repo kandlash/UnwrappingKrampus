@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://bv52qr1m4ecop"]
+[gd_scene load_steps=4 format=4 uid="uid://bv52qr1m4ecop"]
 
 [ext_resource type="PackedScene" uid="uid://dllpe8nup0y6k" path="res://scenes/levels/level_base.tscn" id="1_cwsxx"]
 [ext_resource type="PackedScene" uid="uid://bkrbnia3b8jjy" path="res://scenes/movable_obstacle.tscn" id="2_47x8u"]
+[ext_resource type="PackedScene" uid="uid://cuhj4oiaa772s" path="res://scenes/torch.tscn" id="3_rdv2g"]
 
 [node name="Level_2" instance=ExtResource("1_cwsxx")]
 level_steps = 59
@@ -18,6 +19,9 @@ position = Vector2(120, 96)
 [node name="cart" parent="." index="3"]
 facing_left_right = false
 
+[node name="TileMapLayer" parent="." index="4"]
+tile_map_data = PackedByteArray("AAD8//z/AAAAAAAAAAD8//3/AAAAAAEAAAD8//7/AAAAAAEAAAD8////AAAAAAEAAAD8/wAAAAAAAAEAAAD8/wEAAAAAAAEAAAD8/wIAAAAAAAEAAAD8/wMAAAAAAAIAAAD9//z/AAABAAAAAAD9//3/AAADAAAAAAD9//7/AAADAAEAAAD9////AAABAAEAAAD9/wAAAAABAAEAAAD9/wEAAAABAAEAAAD9/wIAAAABAAEAAAD9/wMAAAABAAIAAAD+//z/AAABAAAAAAD+//3/AAAEAAAAAAD+//7/AAAEAAEAAAD+////AAABAAEAAAD+/wAAAAABAAEAAAD+/wEAAAABAAEAAAD+/wIAAAABAAEAAAD+/wMAAAABAAIAAAD///z/AAABAAAAAAD///3/AAABAAEAAAD///7/AAABAAEAAAD/////AAABAAEAAAD//wAAAAABAAEAAAD//wEAAAABAAEAAAD//wIAAAABAAEAAAD//wMAAAABAAIAAAAAAPz/AAABAAAAAAAAAP3/AAABAAEAAAAAAP7/AAABAAEAAAAAAP//AAABAAEAAAAAAAAAAAABAAEAAAAAAAEAAAADAAAAAAAAAAIAAAADAAEAAAAAAAMAAAABAAIAAAABAPz/AAABAAAAAAABAP3/AAABAAEAAAABAP7/AAABAAEAAAABAP//AAABAAEAAAABAAAAAAABAAEAAAABAAEAAAAEAAAAAAABAAIAAAAEAAEAAAABAAMAAAABAAIAAAACAPz/AAABAAAAAAACAP3/AAABAAEAAAACAP7/AAABAAEAAAACAP//AAABAAEAAAACAAAAAAABAAEAAAACAAEAAAABAAEAAAACAAIAAAABAAEAAAACAAMAAAABAAIAAAADAPz/AAABAAAAAAADAP3/AAABAAEAAAADAP7/AAABAAEAAAADAAAAAAABAAEAAAADAAEAAAABAAEAAAADAAMAAAABAAIAAAD8/wQAAAAAAAMAAAD9/wQAAAABAAMAAAD+/wQAAAABAAMAAAD//wQAAAABAAMAAAAAAAQAAAABAAMAAAABAAQAAAABAAMAAAACAAQAAAABAAMAAAADAAQAAAABAAMAAAADAP//AAABAAEAAAADAAIAAAABAAEAAAAEAAIAAAACAAEAAAAEAAEAAAACAAEAAAAEAAAAAAACAAEAAAAEAP//AAACAAEAAAAEAP7/AAACAAEAAAAEAP3/AAACAAEAAAAEAPz/AAACAAAAAAAEAAMAAAACAAIAAAAEAAQAAAACAAMAAAA=")
+
 [node name="ui" parent="." index="5"]
 level_num = 2
 
@@ -26,3 +30,18 @@ position = Vector2(120, 128)
 
 [node name="MovableObstacle2" parent="." index="10" instance=ExtResource("2_47x8u")]
 position = Vector2(120, 32)
+
+[node name="torch" parent="." index="12" instance=ExtResource("3_rdv2g")]
+position = Vector2(104, 128)
+
+[node name="torch2" parent="." index="13" instance=ExtResource("3_rdv2g")]
+position = Vector2(104, 64)
+
+[node name="torch3" parent="." index="14" instance=ExtResource("3_rdv2g")]
+position = Vector2(200, 64)
+
+[node name="torch4" parent="." index="15" instance=ExtResource("3_rdv2g")]
+position = Vector2(176, 128)
+
+[node name="torch5" parent="." index="16" instance=ExtResource("3_rdv2g")]
+position = Vector2(136, 48)

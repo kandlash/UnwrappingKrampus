@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://cuhj4oiaa772s"]
+[gd_scene load_steps=16 format=3 uid="uid://cuhj4oiaa772s"]
 
 [ext_resource type="Texture2D" uid="uid://dhbqvumy6o4y5" path="res://assets/torch/groundtorch.png" id="1_k4x21"]
 [ext_resource type="Script" path="res://scripts/torch.gd" id="2_bbtof"]
@@ -9,6 +9,8 @@
 [ext_resource type="Texture2D" uid="uid://beusilqmksm3q" path="res://assets/torch/flameani1-6.png" id="6_orper"]
 [ext_resource type="Texture2D" uid="uid://bgh013mrant2c" path="res://assets/torch/flameani1-7.png" id="7_8jqfx"]
 [ext_resource type="Texture2D" uid="uid://cuuci5ghndtyk" path="res://assets/torch/flameani1-8.png" id="8_y3g3l"]
+[ext_resource type="AudioStream" uid="uid://cevunu4aftxeb" path="res://assets/audio/torch_extinguished.mp3" id="10_rgmg1"]
+[ext_resource type="AudioStream" uid="uid://bs4ipr1h4jj0t" path="res://assets/audio/wood_broke.mp3" id="11_c2jn1"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_bhkmg"]
 animations = [{
@@ -67,9 +69,23 @@ color = Color(0.898039, 0.243137, 0, 1)
 energy = 1.71
 texture = SubResource("GradientTexture2D_mytvo")
 
+[node name="PointLight2D2" type="PointLight2D" parent="."]
+color = Color(1, 0.565291, 0.45132, 1)
+energy = 0.5
+texture = SubResource("GradientTexture2D_mytvo")
+texture_scale = 0.3
+
 [node name="broke_area" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="broke_area"]
 shape = SubResource("CircleShape2D_gqcp6")
+
+[node name="extinguished_player" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("10_rgmg1")
+volume_db = -3.0
+
+[node name="wood_broke_player" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("11_c2jn1")
+volume_db = -6.0
 
 [connection signal="area_entered" from="broke_area" to="." method="_on_broke_area_area_entered"]

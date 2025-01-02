@@ -1,0 +1,40 @@
+[gd_scene load_steps=7 format=3 uid="uid://cubody0tud4f"]
+
+[ext_resource type="Texture2D" uid="uid://dcgmodi0piwvw" path="res://assets/candle1.png" id="1_sk5gr"]
+[ext_resource type="Script" path="res://scripts/candle.gd" id="2_sks77"]
+[ext_resource type="AudioStream" uid="uid://cevunu4aftxeb" path="res://assets/audio/torch_extinguished.mp3" id="3_kef3m"]
+
+[sub_resource type="Gradient" id="Gradient_os8eg"]
+offsets = PackedFloat32Array(0, 0.736486)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_sf53y"]
+gradient = SubResource("Gradient_os8eg")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_nliyp"]
+radius = 7.0
+
+[node name="candle" type="Sprite2D"]
+texture = ExtResource("1_sk5gr")
+offset = Vector2(0, -4)
+script = ExtResource("2_sks77")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+color = Color(1, 0.662745, 0.247059, 1)
+energy = 0.8
+texture = SubResource("GradientTexture2D_sf53y")
+texture_scale = 0.5
+
+[node name="candle_area" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="candle_area"]
+shape = SubResource("CircleShape2D_nliyp")
+
+[node name="candle_broke" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_kef3m")
+volume_db = -10.0
+pitch_scale = 1.2
+
+[connection signal="area_entered" from="candle_area" to="." method="_on_candle_area_area_entered"]

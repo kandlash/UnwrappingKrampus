@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://dg37kjby5ixg0" path="res://scenes/player.tscn" id="2_1ghs5"]
 [ext_resource type="PackedScene" uid="uid://c6lyrsuq40mig" path="res://scenes/test_level.tscn" id="2_83kvo"]
 [ext_resource type="PackedScene" uid="uid://y4th65ssfqyb" path="res://scenes/cart.tscn" id="3_fqeym"]
-[ext_resource type="PackedScene" uid="uid://bh1hudpvpu4jf" path="res://scenes/rock.tscn" id="4_f3nq8"]
+[ext_resource type="PackedScene" uid="uid://bh1hudpvpu4jf" path="res://scenes/coal_obstacle.tscn" id="4_f3nq8"]
 [ext_resource type="PackedScene" uid="uid://gkocld8f8in3" path="res://scenes/furnace.tscn" id="5_3e40l"]
 [ext_resource type="PackedScene" uid="uid://bhen6wmyofvoh" path="res://scenes/ui.tscn" id="7_xpv3m"]
 

@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=4 uid="uid://baqfu5ld2cmiv"]
 
 [ext_resource type="PackedScene" uid="uid://dllpe8nup0y6k" path="res://scenes/levels/level_base.tscn" id="1_vbmsf"]
-[ext_resource type="PackedScene" uid="uid://bh1hudpvpu4jf" path="res://scenes/rock.tscn" id="2_vjndy"]
+[ext_resource type="PackedScene" uid="uid://bh1hudpvpu4jf" path="res://scenes/coal_obstacle.tscn" id="2_vjndy"]
 [ext_resource type="PackedScene" uid="uid://cuhj4oiaa772s" path="res://scenes/torch.tscn" id="3_dsnig"]
 
 [node name="train_level_1" instance=ExtResource("1_vbmsf")]
