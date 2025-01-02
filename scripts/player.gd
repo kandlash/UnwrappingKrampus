@@ -38,7 +38,7 @@ func move(direction: Vector2):
 	$RayCast2D.target_position = direction * tile_size
 	$RayCast2D.force_raycast_update()
 	if $RayCast2D.is_colliding():
-		return
+		return 
 	is_moving = true
 	get_parent().update_steps()
 	var tween = create_tween()

@@ -1,10 +1,13 @@
-[gd_scene load_steps=14 format=3 uid="uid://y4th65ssfqyb"]
+[gd_scene load_steps=17 format=3 uid="uid://y4th65ssfqyb"]
 
 [ext_resource type="Script" path="res://scripts/cart.gd" id="1_ca45l"]
 [ext_resource type="Shader" path="res://shaders/cart.gdshader" id="2_2ic2e"]
 [ext_resource type="Texture2D" uid="uid://co0iauuurh65r" path="res://assets/telega_ltop_down.png" id="2_q1bs4"]
 [ext_resource type="Texture2D" uid="uid://tn2rm06ixnvb" path="res://assets/telega_left_right.png" id="3_ut43m"]
 [ext_resource type="Texture2D" uid="uid://dyq0aob67ec2c" path="res://assets/flame_particle.png" id="4_kv745"]
+[ext_resource type="Texture2D" uid="uid://m8gxf3k2rh3d" path="res://assets/shadow.png" id="6_qxjyu"]
+[ext_resource type="AudioStream" uid="uid://4whf5uxadloi" path="res://assets/audio/Trap_00.wav" id="7_jnol7"]
+[ext_resource type="AudioStream" uid="uid://coo7thwvfw451" path="res://assets/audio/damage.mp3" id="8_sogw4"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_3a0fb"]
 shader = ExtResource("2_2ic2e")
@@ -87,6 +90,7 @@ shape = SubResource("CircleShape2D_7rmn3")
 debug_color = Color(0.97179, 0, 0.445535, 0.42)
 
 [node name="left_particle" type="CPUParticles2D" parent="."]
+modulate = Color(1, 1, 1, 0.458824)
 position = Vector2(-16, 0)
 amount = 5
 lifetime = 1.5
@@ -100,6 +104,7 @@ scale_amount_min = 0.0
 scale_amount_max = 0.1
 
 [node name="right_particle" type="CPUParticles2D" parent="."]
+modulate = Color(1, 1, 1, 0.458824)
 position = Vector2(16, 0)
 amount = 5
 lifetime = 1.5
@@ -113,6 +118,7 @@ scale_amount_min = 0.0
 scale_amount_max = 0.1
 
 [node name="top_particle" type="CPUParticles2D" parent="."]
+modulate = Color(1, 1, 1, 0.458824)
 position = Vector2(0, -16)
 amount = 5
 lifetime = 1.5
@@ -126,6 +132,7 @@ scale_amount_min = 0.0
 scale_amount_max = 0.1
 
 [node name="down_particle" type="CPUParticles2D" parent="."]
+modulate = Color(1, 1, 1, 0.458824)
 position = Vector2(0, 16)
 amount = 5
 lifetime = 0.5
@@ -137,6 +144,29 @@ emission_sphere_radius = 4.0
 gravity = Vector2(0, -10)
 scale_amount_min = 0.0
 scale_amount_max = 0.1
+
+[node name="left_right_shadow" type="Sprite2D" parent="."]
+visible = false
+modulate = Color(1, 1, 1, 0.45098)
+z_index = -1
+position = Vector2(0, 8)
+scale = Vector2(1, 0.319999)
+texture = ExtResource("6_qxjyu")
+
+[node name="top_down_shadow" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.45098)
+z_index = -1
+rotation = 1.5708
+scale = Vector2(1, 0.84)
+texture = ExtResource("6_qxjyu")
+
+[node name="cart_stop" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_jnol7")
+volume_db = -5.0
+
+[node name="damage" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_sogw4")
+volume_db = -5.0
 
 [connection signal="body_entered" from="top_area" to="." method="_on_top_area_body_entered"]
 [connection signal="body_exited" from="top_area" to="." method="_on_top_area_body_exited"]

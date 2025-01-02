@@ -35,12 +35,18 @@ func update_steps():
 		reload_level()
 
 func reload_level():
+	if not get_tree():
+		return
+
 	for node in get_children():
 		node.set_process(false)
 		node.set_physics_process(false)
+	
 	Transition.transition()
 	await Transition.on_transition_finished
-	get_tree().reload_current_scene()
+	
+	if get_tree():
+		get_tree().reload_current_scene()
 
 func update_carts():
 	if Globals.level_carts - 1 == 0:

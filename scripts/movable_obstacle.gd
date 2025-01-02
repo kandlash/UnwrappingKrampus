@@ -10,12 +10,20 @@ var can_be_moved = false
 
 func _ready() -> void:
 	step = tile_size * step_coof
+	set_process(false)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if Input.is_action_just_pressed("action") and can_be_moved:
+	if Input.is_action_just_pressed("action"):
+		if not can_be_moved:
+			camera.set_shake(0.08)
+			$damage.pitch_scale = 0.7
+			$damage.play()
+			return
 		move()
-	
+		$damage.pitch_scale = 1
+		$damage.play()
+
 func move():
 	camera.set_shake(0.1)
 	var level = get_parent()
@@ -32,6 +40,8 @@ func move():
 	tween.tween_callback(end_move)
 
 func end_move():
+	$damage.pitch_scale = 0.8
+	$damage.play()
 	camera.set_shake(0.1)
 	var player = get_parent().get_node("Player")
 	player.set_physics_process(true)
@@ -46,12 +56,14 @@ func try_access_move(direction):
 
 func _on_top_area_body_entered(body: Node2D) -> void:
 	if body.name == "Player":
+		set_process(true)
 		try_access_move(Vector2(0, step))
 		ensure_unique_material($Sprite2D)
 		$Sprite2D.material.set_shader_parameter("line_thickness", 0.5)
 
 func _on_top_area_body_exited(body: Node2D) -> void:
 	if body.name == "Player":
+		set_process(false)
 		can_be_moved = false
 		ensure_unique_material($Sprite2D)
 		$Sprite2D.material.set_shader_parameter("line_thickness", 0)
@@ -59,6 +71,7 @@ func _on_top_area_body_exited(body: Node2D) -> void:
 
 func _on_down_area_body_entered(body: Node2D) -> void:
 	if body.name == "Player":
+		set_process(true)
 		try_access_move(Vector2(0, -step))
 		ensure_unique_material($Sprite2D)
 		$Sprite2D.material.set_shader_parameter("line_thickness", 0.5)
@@ -66,6 +79,7 @@ func _on_down_area_body_entered(body: Node2D) -> void:
 
 func _on_down_area_body_exited(body: Node2D) -> void:
 	if body.name == "Player":
+		set_process(false)
 		can_be_moved = false
 		ensure_unique_material($Sprite2D)
 		$Sprite2D.material.set_shader_parameter("line_thickness", 0)
@@ -73,12 +87,14 @@ func _on_down_area_body_exited(body: Node2D) -> void:
 
 func _on_left_area_body_entered(body: Node2D) -> void:
 	if body.name == "Player":
+		set_process(true)
 		try_access_move(Vector2(step, 0))
 		ensure_unique_material($Sprite2D)
 		$Sprite2D.material.set_shader_parameter("line_thickness", 0.5)
 
 func _on_left_area_body_exited(body: Node2D) -> void:
 	if body.name == "Player":
+		set_process(false)
 		can_be_moved = false
 		ensure_unique_material($Sprite2D)
 		$Sprite2D.material.set_shader_parameter("line_thickness", 0)
@@ -86,12 +102,14 @@ func _on_left_area_body_exited(body: Node2D) -> void:
 
 func _on_right_area_body_entered(body: Node2D) -> void:
 	if body.name == "Player":
+		set_process(true)
 		try_access_move(Vector2(-step, 0))
 		ensure_unique_material($Sprite2D)
 		$Sprite2D.material.set_shader_parameter("line_thickness", 0.5)
 
 func _on_right_area_body_exited(body: Node2D) -> void:
 	if body.name == "Player":
+		set_process(false)
 		can_be_moved = false
 		ensure_unique_material($Sprite2D)
 		$Sprite2D.material.set_shader_parameter("line_thickness", 0)

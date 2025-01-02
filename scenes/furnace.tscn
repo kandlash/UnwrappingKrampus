@@ -1,7 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://gkocld8f8in3"]
+[gd_scene load_steps=7 format=3 uid="uid://gkocld8f8in3"]
 
 [ext_resource type="Script" path="res://scripts/furnace.gd" id="1_bshwy"]
 [ext_resource type="Texture2D" uid="uid://bxa2ma7pso6n5" path="res://assets/fence.png" id="1_lds7l"]
+[ext_resource type="Texture2D" uid="uid://m8gxf3k2rh3d" path="res://assets/shadow.png" id="3_bjrjl"]
+[ext_resource type="Texture2D" uid="uid://dn5im8srs356k" path="res://assets/dust.png" id="4_8w7q4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oqfns"]
 size = Vector2(16, 32)
@@ -24,5 +26,21 @@ shape = SubResource("RectangleShape2D_oqfns")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(-8, 0)
 shape = SubResource("CircleShape2D_txtf5")
+
+[node name="shadow" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.45098)
+position = Vector2(-8, 0)
+texture = ExtResource("3_bjrjl")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+modulate = Color(1, 1, 1, 0.486275)
+position = Vector2(-8, 0)
+amount = 3
+texture = ExtResource("4_8w7q4")
+emission_shape = 1
+emission_sphere_radius = 7.0
+gravity = Vector2(0, -10)
+scale_amount_min = 0.1
+scale_amount_max = 0.3
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

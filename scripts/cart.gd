@@ -24,6 +24,8 @@ func enable_left_right():
 	$right_particle.emitting = true
 	$top_particle.emitting = false
 	$down_particle.emitting = false
+	$left_right_shadow.visible = true
+	$top_down_shadow.visible = false
 	
 func enable_top_down():
 	$left_right.visible = false
@@ -36,6 +38,8 @@ func enable_top_down():
 	$right_particle.emitting = false
 	$top_particle.emitting = true
 	$down_particle.emitting = true
+	$left_right_shadow.visible = false
+	$top_down_shadow.visible = true
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -44,14 +48,21 @@ func _process(delta: float) -> void:
 
 
 func move():
-	camera.set_shake(0.1)
+
 	var distance
 	$RayCast2D.target_position = direction * raydistance
 	$RayCast2D.force_raycast_update()
 	if $RayCast2D.is_colliding():
 		distance = position.distance_to($RayCast2D.get_collision_point())
 	if distance < tile_size:
+		$damage.pitch_scale = 0.7
+		$damage.play()
+		camera.set_shake(0.08)
 		return
+	
+	$damage.pitch_scale = 1
+	$damage.play()
+	camera.set_shake(0.1)
 	get_parent().get_node("Player").set_physics_process(false)
 	var coof = round(distance/tile_size)-1
 	var tween = create_tween()
@@ -64,6 +75,7 @@ func move():
 	tween.tween_callback(end_cart_move)
 
 func end_cart_move():
+	$cart_stop.play()
 	camera.set_shake(0.15)
 	get_parent().get_node("Player").set_physics_process(true)
 	get_parent().update_steps()

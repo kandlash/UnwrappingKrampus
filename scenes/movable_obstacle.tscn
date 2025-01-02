@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://bkrbnia3b8jjy"]
+[gd_scene load_steps=11 format=3 uid="uid://bkrbnia3b8jjy"]
 
 [ext_resource type="Script" path="res://scripts/movable_obstacle.gd" id="1_857vp"]
 [ext_resource type="Texture2D" uid="uid://clhwcjrfsp4c1" path="res://assets/movable_obstacle.png" id="1_n2nbw"]
 [ext_resource type="Shader" path="res://shaders/cart.gdshader" id="2_t4mtd"]
+[ext_resource type="AudioStream" uid="uid://coo7thwvfw451" path="res://assets/audio/damage.mp3" id="4_aql4f"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0wkm7"]
 size = Vector2(16, 16)
@@ -64,6 +65,11 @@ debug_color = Color(0.427088, 0.459018, 1, 0.42)
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
 target_position = Vector2(0, 16)
+
+[node name="damage" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_aql4f")
+volume_db = -5.0
+pitch_scale = 0.8
 
 [connection signal="body_entered" from="top_area" to="." method="_on_top_area_body_entered"]
 [connection signal="body_exited" from="top_area" to="." method="_on_top_area_body_exited"]
