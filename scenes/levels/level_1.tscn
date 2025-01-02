@@ -1,17 +1,19 @@
-[gd_scene load_steps=6 format=4 uid="uid://dcp5ow1vr66rn"]
+[gd_scene load_steps=7 format=4 uid="uid://dcp5ow1vr66rn"]
 
 [ext_resource type="PackedScene" uid="uid://dllpe8nup0y6k" path="res://scenes/levels/level_base.tscn" id="1_ixx7u"]
 [ext_resource type="PackedScene" uid="uid://gkocld8f8in3" path="res://scenes/furnace.tscn" id="2_565wy"]
 [ext_resource type="PackedScene" uid="uid://y4th65ssfqyb" path="res://scenes/cart.tscn" id="3_1sg0m"]
 [ext_resource type="PackedScene" uid="uid://bh1hudpvpu4jf" path="res://scenes/coal_obstacle.tscn" id="3_j6bv8"]
 [ext_resource type="PackedScene" uid="uid://cuhj4oiaa772s" path="res://scenes/torch.tscn" id="5_iyfnc"]
+[ext_resource type="PackedScene" uid="uid://cubody0tud4f" path="res://scenes/candle.tscn" id="6_sbuot"]
 
 [node name="Level1" instance=ExtResource("1_ixx7u")]
 level_steps = 70
 level_carts = 2
 start_timeline = "level_1_timeline"
 next_level = "res://scenes/levels/level_2.tscn"
-level_num = 2
+level_num = 4
+level_text = "Level 4: More [color=red]carts...[/color]"
 
 [node name="furnace" parent="." index="0"]
 position = Vector2(160, 80)
@@ -55,16 +57,21 @@ position = Vector2(128, 80)
 tile_map_data = PackedByteArray("AAD8//z/AAAAAAAAAAD8//3/AAAAAAEAAAD8//7/AAAAAAEAAAD8////AAAAAAEAAAD8/wAAAAAAAAEAAAD8/wEAAAAAAAEAAAD8/wIAAAAAAAEAAAD8/wMAAAAAAAIAAAD9//z/AAABAAAAAAD9//3/AAABAAEAAAD9//7/AAABAAEAAAD9////AAABAAEAAAD9/wAAAAABAAEAAAD9/wEAAAABAAEAAAD9/wIAAAABAAEAAAD9/wMAAAABAAIAAAD+//z/AAABAAAAAAD+//3/AAABAAEAAAD+//7/AAABAAEAAAD+////AAABAAEAAAD+/wAAAAABAAEAAAD+/wEAAAABAAEAAAD+/wIAAAABAAEAAAD+/wMAAAABAAIAAAD///z/AAABAAAAAAD///3/AAABAAEAAAD///7/AAABAAEAAAD/////AAABAAEAAAD//wAAAAABAAEAAAD//wEAAAABAAEAAAD//wIAAAABAAEAAAD//wMAAAABAAIAAAAAAPz/AAABAAAAAAAAAP3/AAABAAEAAAAAAP7/AAABAAEAAAAAAP//AAABAAEAAAAAAAAAAAABAAEAAAAAAAEAAAABAAEAAAAAAAIAAAABAAEAAAAAAAMAAAABAAIAAAABAPz/AAABAAAAAAABAP3/AAABAAEAAAABAP7/AAABAAEAAAABAP//AAABAAEAAAABAAAAAAABAAEAAAABAAEAAAABAAEAAAABAAIAAAABAAEAAAABAAMAAAABAAIAAAACAAEAAAABAAEAAAACAAIAAAABAAEAAAACAAMAAAABAAMAAAADAPz/AAAAAAAAAAADAP3/AAAAAAEAAAADAP7/AAAAAAEAAAADAAAAAAAAAAEAAAADAAEAAAABAAEAAAADAAMAAAAAAAIAAAD8/wQAAAAAAAMAAAD9/wQAAAABAAMAAAD+/wQAAAABAAMAAAD//wQAAAABAAMAAAAAAAQAAAABAAMAAAABAAQAAAABAAMAAAADAAQAAAAAAAMAAAADAP//AAAAAAEAAAADAAIAAAABAAEAAAAHAAIAAAACAAEAAAAGAAIAAAABAAEAAAAFAAIAAAABAAEAAAAEAAIAAAABAAEAAAAEAAEAAAABAAEAAAAEAAAAAAABAAEAAAAEAP//AAABAAEAAAAEAP7/AAABAAEAAAAEAP3/AAABAAEAAAAFAP3/AAABAAEAAAAGAP3/AAABAAEAAAAHAP3/AAABAAEAAAAHAP7/AAABAAEAAAAHAP//AAABAAEAAAAHAAAAAAACAAEAAAAHAAEAAAACAAEAAAAGAAEAAAABAAEAAAAFAAEAAAABAAEAAAAFAAAAAAABAAEAAAAFAP//AAABAAEAAAAFAP7/AAABAAEAAAAGAP7/AAABAAEAAAAGAP//AAABAAEAAAAGAAAAAAABAAEAAAAEAPz/AAABAAAAAAAFAPz/AAABAAAAAAAGAPz/AAABAAAAAAAHAPz/AAABAAAAAAAHAAMAAAACAAIAAAAGAAMAAAABAAIAAAAFAAMAAAABAAIAAAAEAAMAAAABAAIAAAAEAAQAAAABAAMAAAAFAAQAAAABAAMAAAAGAAQAAAABAAMAAAAHAAQAAAACAAMAAAAIAP7/AAABAAEAAAAIAP3/AAABAAEAAAAIAP//AAABAAIAAAAJAP7/AAACAAEAAAAJAP//AAACAAIAAAAJAP3/AAACAAEAAAAJAPz/AAACAAAAAAAIAPz/AAABAAAAAAA=")
 
 [node name="ui" parent="." index="12"]
-level_num = 1
+level_num = 4
 
-[node name="torch" parent="." index="17" instance=ExtResource("5_iyfnc")]
-position = Vector2(128, 128)
-
-[node name="torch4" parent="." index="18" instance=ExtResource("5_iyfnc")]
+[node name="torch4" parent="." index="17" instance=ExtResource("5_iyfnc")]
 position = Vector2(208, 112)
 
-[node name="torch2" parent="." index="19" instance=ExtResource("5_iyfnc")]
+[node name="torch2" parent="." index="18" instance=ExtResource("5_iyfnc")]
 position = Vector2(128, 48)
 
-[node name="torch3" parent="." index="20" instance=ExtResource("5_iyfnc")]
+[node name="torch3" parent="." index="19" instance=ExtResource("5_iyfnc")]
 position = Vector2(256, 48)
+
+[node name="candle" parent="." index="20" instance=ExtResource("6_sbuot")]
+position = Vector2(128, 128)
+candle_amount = 3
+
+[node name="candle2" parent="." index="21" instance=ExtResource("6_sbuot")]
+position = Vector2(80, 48)
+candle_amount = 2

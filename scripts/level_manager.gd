@@ -6,6 +6,7 @@ extends Node2D
 @export var end_timeline: String = "None"
 @export var next_level : String
 @export var level_num : int
+@export var level_text: String = "Level 0"
 # Called when the node enters the scene tree for the first time.
 
 func _process(delta: float) -> void:
@@ -16,6 +17,7 @@ func _ready() -> void:
 	RenderingServer.set_default_clear_color(Color.BLACK)
 	Globals.level_carts = level_carts
 	Globals.level_steps = level_steps
+	LevelText.play_animation(level_text)
 	$ui.update_steps()
 	Dialogic.signal_event.connect(_on_dialogic_signal)
 	if start_timeline != "None":

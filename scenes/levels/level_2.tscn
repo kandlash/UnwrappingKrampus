@@ -1,14 +1,15 @@
-[gd_scene load_steps=4 format=4 uid="uid://bv52qr1m4ecop"]
+[gd_scene load_steps=5 format=4 uid="uid://bv52qr1m4ecop"]
 
 [ext_resource type="PackedScene" uid="uid://dllpe8nup0y6k" path="res://scenes/levels/level_base.tscn" id="1_cwsxx"]
 [ext_resource type="PackedScene" uid="uid://bkrbnia3b8jjy" path="res://scenes/movable_obstacle.tscn" id="2_47x8u"]
 [ext_resource type="PackedScene" uid="uid://cuhj4oiaa772s" path="res://scenes/torch.tscn" id="3_rdv2g"]
+[ext_resource type="PackedScene" uid="uid://cubody0tud4f" path="res://scenes/candle.tscn" id="4_n68my"]
 
 [node name="Level_2" instance=ExtResource("1_cwsxx")]
 level_steps = 63
-start_timeline = "test_timeline2"
 next_level = "res://scenes/levels/level_1.tscn"
-level_num = 1
+level_num = 5
+level_text = "Level 5: Just level, [wave frequency=50 amp=8 connected=1]I guess...[/wave]"
 
 [node name="Player" parent="." index="1"]
 position = Vector2(88, 64)
@@ -23,7 +24,7 @@ facing_left_right = false
 tile_map_data = PackedByteArray("AAD8//z/AAAAAAAAAAD8//3/AAAAAAEAAAD8//7/AAAAAAEAAAD8////AAAAAAEAAAD8/wAAAAAAAAEAAAD8/wEAAAAAAAEAAAD8/wIAAAAAAAEAAAD8/wMAAAAAAAIAAAD9//z/AAABAAAAAAD9//3/AAADAAAAAAD9//7/AAADAAEAAAD9////AAABAAEAAAD9/wAAAAABAAEAAAD9/wEAAAABAAEAAAD9/wIAAAABAAEAAAD9/wMAAAABAAIAAAD+//z/AAABAAAAAAD+//3/AAAEAAAAAAD+//7/AAAEAAEAAAD+////AAABAAEAAAD+/wAAAAABAAEAAAD+/wEAAAABAAEAAAD+/wIAAAABAAEAAAD+/wMAAAABAAIAAAD///z/AAABAAAAAAD///3/AAABAAEAAAD///7/AAABAAEAAAD/////AAABAAEAAAD//wAAAAABAAEAAAD//wEAAAABAAEAAAD//wIAAAABAAEAAAD//wMAAAABAAIAAAAAAPz/AAABAAAAAAAAAP3/AAABAAEAAAAAAP7/AAABAAEAAAAAAP//AAABAAEAAAAAAAAAAAABAAEAAAAAAAEAAAADAAAAAAAAAAIAAAADAAEAAAAAAAMAAAABAAIAAAABAPz/AAABAAAAAAABAP3/AAABAAEAAAABAP7/AAABAAEAAAABAP//AAABAAEAAAABAAAAAAABAAEAAAABAAEAAAAEAAAAAAABAAIAAAAEAAEAAAABAAMAAAABAAIAAAACAPz/AAABAAAAAAACAP3/AAABAAEAAAACAP7/AAABAAEAAAACAP//AAABAAEAAAACAAAAAAABAAEAAAACAAEAAAABAAEAAAACAAIAAAABAAEAAAACAAMAAAABAAIAAAADAPz/AAABAAAAAAADAP3/AAABAAEAAAADAP7/AAABAAEAAAADAAAAAAABAAEAAAADAAEAAAABAAEAAAADAAMAAAABAAIAAAD8/wQAAAAAAAMAAAD9/wQAAAABAAMAAAD+/wQAAAABAAMAAAD//wQAAAABAAMAAAAAAAQAAAABAAMAAAABAAQAAAABAAMAAAACAAQAAAABAAMAAAADAAQAAAABAAMAAAADAP//AAABAAEAAAADAAIAAAABAAEAAAAEAAIAAAACAAEAAAAEAAEAAAACAAEAAAAEAAAAAAACAAEAAAAEAP//AAACAAEAAAAEAP7/AAACAAEAAAAEAP3/AAACAAEAAAAEAPz/AAACAAAAAAAEAAMAAAACAAIAAAAEAAQAAAACAAMAAAA=")
 
 [node name="ui" parent="." index="5"]
-level_num = 2
+level_num = 5
 
 [node name="MovableObstacle" parent="." index="9" instance=ExtResource("2_47x8u")]
 position = Vector2(120, 128)
@@ -41,7 +42,23 @@ position = Vector2(104, 64)
 position = Vector2(200, 64)
 
 [node name="torch4" parent="." index="15" instance=ExtResource("3_rdv2g")]
-position = Vector2(176, 128)
+position = Vector2(168, 112)
 
 [node name="torch5" parent="." index="16" instance=ExtResource("3_rdv2g")]
 position = Vector2(136, 48)
+
+[node name="candle" parent="." index="17" instance=ExtResource("4_n68my")]
+position = Vector2(88, 48)
+candle_amount = 4
+
+[node name="candle2" parent="." index="18" instance=ExtResource("4_n68my")]
+position = Vector2(104, 32)
+candle_amount = 3
+
+[node name="candle3" parent="." index="19" instance=ExtResource("4_n68my")]
+position = Vector2(200, 32)
+candle_amount = 3
+
+[node name="candle4" parent="." index="20" instance=ExtResource("4_n68my")]
+position = Vector2(136, 128)
+candle_amount = 2
