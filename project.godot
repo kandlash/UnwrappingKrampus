@@ -24,6 +24,7 @@ Transition="*res://scenes/canvas_layer.tscn"
 SuccessTransition="*res://scenes/success_canvas.tscn"
 WinSoundPlayer="*res://scenes/win_sound_player.tscn"
 LevelText="*res://scenes/level_text.tscn"
+MusicPlayer="*res://scenes/music_player.tscn"
 
 [dialogic]
 

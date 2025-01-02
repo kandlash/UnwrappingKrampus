@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scripts/furnace.gd" id="1_bshwy"]
 [ext_resource type="Texture2D" uid="uid://bxa2ma7pso6n5" path="res://assets/fence.png" id="1_lds7l"]
-[ext_resource type="Texture2D" uid="uid://m8gxf3k2rh3d" path="res://assets/shadow.png" id="3_bjrjl"]
+[ext_resource type="Texture2D" uid="uid://bxi2ai78oiett" path="res://assets/arrow.png" id="3_3m1cr"]
 [ext_resource type="Texture2D" uid="uid://dn5im8srs356k" path="res://assets/dust.png" id="4_8w7q4"]
 [ext_resource type="AudioStream" uid="uid://b1x8p3cm0e28i" path="res://assets/audio/furnace_sound.wav" id="5_a2xgw"]
 
@@ -40,7 +40,7 @@ shape = SubResource("CircleShape2D_txtf5")
 [node name="shadow" type="Sprite2D" parent="."]
 modulate = Color(1, 1, 1, 0.45098)
 position = Vector2(-8, 0)
-texture = ExtResource("3_bjrjl")
+texture = ExtResource("3_3m1cr")
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="."]
 modulate = Color(1, 1, 1, 0.486275)

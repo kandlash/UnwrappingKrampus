@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://k53bpl34kdpe"]
+
+[ext_resource type="Script" path="res://scripts/music_player.gd" id="1_0syw5"]
+[ext_resource type="AudioStream" uid="uid://b11ilsttu1wqg" path="res://assets/audio/The Biggest SwordALPHAGAMABETA.mp3" id="2_f3brr"]
+
+[node name="MusicPlayer" type="Node"]
+script = ExtResource("1_0syw5")
+
+[node name="MusicPlayer" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_f3brr")
+volume_db = -12.0
+autoplay = true

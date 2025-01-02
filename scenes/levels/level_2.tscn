@@ -38,27 +38,17 @@ position = Vector2(104, 128)
 [node name="torch2" parent="." index="13" instance=ExtResource("3_rdv2g")]
 position = Vector2(104, 64)
 
-[node name="torch3" parent="." index="14" instance=ExtResource("3_rdv2g")]
-position = Vector2(200, 64)
+[node name="torch4" parent="." index="14" instance=ExtResource("3_rdv2g")]
+position = Vector2(168, 56)
 
-[node name="torch4" parent="." index="15" instance=ExtResource("3_rdv2g")]
-position = Vector2(168, 112)
-
-[node name="torch5" parent="." index="16" instance=ExtResource("3_rdv2g")]
-position = Vector2(136, 48)
-
-[node name="candle" parent="." index="17" instance=ExtResource("4_n68my")]
-position = Vector2(88, 48)
-candle_amount = 4
-
-[node name="candle2" parent="." index="18" instance=ExtResource("4_n68my")]
+[node name="candle2" parent="." index="15" instance=ExtResource("4_n68my")]
 position = Vector2(104, 32)
 candle_amount = 3
 
-[node name="candle3" parent="." index="19" instance=ExtResource("4_n68my")]
+[node name="candle3" parent="." index="16" instance=ExtResource("4_n68my")]
 position = Vector2(200, 32)
 candle_amount = 3
 
-[node name="candle4" parent="." index="20" instance=ExtResource("4_n68my")]
+[node name="candle4" parent="." index="17" instance=ExtResource("4_n68my")]
 position = Vector2(136, 128)
 candle_amount = 2
