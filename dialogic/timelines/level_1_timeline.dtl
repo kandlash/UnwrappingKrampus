@@ -1,0 +1,5 @@
+join test_character right
+test_character: Please, take care of things here! I need to run off somewhere...
+test_character: [wave amp=15.0 freq=5.0 connected=1][color=red]Ahem...[/color][/wave] [pause=1.5]
+test_character: I mean, it is none of your business, [shake rate=10.0 level=2 connected=1]little man![/shake]
+[signal arg="dialog_end"]

@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://dg37kjby5ixg0"]
+[gd_scene load_steps=8 format=3 uid="uid://dg37kjby5ixg0"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_di332"]
 [ext_resource type="Texture2D" uid="uid://diy8483daaxk1" path="res://assets/testplayer.png" id="2_aa57q"]
 [ext_resource type="Texture2D" uid="uid://dn5im8srs356k" path="res://assets/dust.png" id="3_tu6ux"]
 [ext_resource type="Texture2D" uid="uid://m8gxf3k2rh3d" path="res://assets/shadow.png" id="4_8xlvl"]
+[ext_resource type="AudioStream" uid="uid://cnhsx7wc5lihn" path="res://assets/audio/swipe.mp3" id="5_g8tug"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_44k6k"]
 size = Vector2(16, 16)
@@ -57,5 +58,10 @@ z_index = -1
 position = Vector2(0, 8)
 scale = Vector2(1, 0.319999)
 texture = ExtResource("4_8xlvl")
+
+[node name="swipe" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_g8tug")
+volume_db = -20.0
+pitch_scale = 0.85
 
 [connection signal="timeout" from="start_delay" to="." method="_on_start_delay_timeout"]

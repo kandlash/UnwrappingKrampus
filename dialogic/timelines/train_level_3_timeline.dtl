@@ -1,0 +1,4 @@
+join test_character right
+test_character: But sometimes you need to think…
+- ...
+[signal arg="dialog_end"]

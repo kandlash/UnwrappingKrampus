@@ -59,7 +59,7 @@ func move():
 		$damage.play()
 		camera.set_shake(0.08)
 		return
-	
+	can_be_moved = false
 	$damage.pitch_scale = 1
 	$damage.play()
 	camera.set_shake(0.1)
@@ -70,7 +70,7 @@ func move():
 	self,
 	"position",
 	position + direction * tile_size * coof,
-	0.2*coof
+	0.2*coof/1.5
 	).set_trans(Tween.TRANS_SPRING)
 	tween.tween_callback(end_cart_move)
 
@@ -98,7 +98,6 @@ func _on_top_area_body_entered(body: Node2D) -> void:
 func _on_top_area_body_exited(body: Node2D) -> void:
 	if body.name == "Player":
 		can_be_moved = false
-		direction = Vector2.ZERO
 		ensure_unique_material($top_down)
 		$top_down.material.set_shader_parameter("line_thickness", 0)
 

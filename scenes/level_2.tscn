@@ -4,16 +4,22 @@
 [ext_resource type="PackedScene" uid="uid://bkrbnia3b8jjy" path="res://scenes/movable_obstacle.tscn" id="2_47x8u"]
 
 [node name="Level_2" instance=ExtResource("1_cwsxx")]
-level_steps = 70
+level_steps = 59
 start_timeline = "test_timeline2"
 next_level = "res://scenes/level_1.tscn"
 level_num = 1
+
+[node name="Player" parent="." index="1"]
+position = Vector2(88, 64)
 
 [node name="rock" parent="." index="2"]
 position = Vector2(120, 96)
 
 [node name="cart" parent="." index="3"]
 facing_left_right = false
+
+[node name="ui" parent="." index="5"]
+level_num = 2
 
 [node name="MovableObstacle" parent="." index="9" instance=ExtResource("2_47x8u")]
 position = Vector2(120, 128)

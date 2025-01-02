@@ -39,6 +39,7 @@ func move(direction: Vector2):
 	$RayCast2D.force_raycast_update()
 	if $RayCast2D.is_colliding():
 		return 
+	$swipe.play()
 	is_moving = true
 	get_parent().update_steps()
 	var tween = create_tween()

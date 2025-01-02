@@ -1,0 +1,4 @@
+join test_character right
+test_character: Great! You’re getting the hang of it. Also, the cart turns the other way when it crashes.
+- Hey, hold on…
+[signal arg="dialog_end"]

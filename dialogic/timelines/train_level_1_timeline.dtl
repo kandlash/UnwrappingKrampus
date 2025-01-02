@@ -1,0 +1,10 @@
+join test_character right
+test_character: You’ve finally woken up! Uh... hmm, could you…
+- What the hell, dude?
+- What?
+test_character: So, I need you to deliver these coal carts to those collectors over there…
+- Wait, who are you anyway? How did I even get here?
+test_character: My name is Krampus… We’re in the caves beneath the factory.
+test_character: Anyway, you just need to push the cart from one side, and it’ll roll… Give it a try!
+- …
+[signal arg="dialog_end"]
