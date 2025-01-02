@@ -1,10 +1,15 @@
 join test_character right
-test_character: You’ve finally woken up! Uh... hmm, could you…
+You’ve [wave frequency=25 amp=5 connected=1]finally[/wave] woken up!
+Uh... hmm, could you…
+[wait_input hide_text="false"]
 - What the hell, dude?
 - What?
-test_character: So, I need you to deliver these coal carts to those collectors over there…
+So, I need you to deliver these [wave frequency=25 amp=5 connected=1][color=blue]coal carts[/color][/wave]to those [wave frequency=25 amp=5 connected=1][color=red]collectors[/color][/wave] over there…
+[wait_input hide_text="false"]
 - Wait, who are you anyway? How did I even get here?
-test_character: My name is Krampus… We’re in the caves beneath the factory.
-test_character: Anyway, you just need to push the cart from one side, and it’ll roll… Give it a try!
+[sound path="res://assets/audio/krampus_scary_sound.wav" volume="-10.0"]
+test_character: My name is [shake rate=20.0 level=5 connected=1][font_size=8][color=red]Krampus…[/color] [/font_size][/shake]
+test_character: We’re in the caves beneath the [color=blue]factory[/color].
+test_character: Anyway, you just need to [color=red]push[/color] the cart from one side, and it’ll roll… Give it a try!
 - …
 [signal arg="dialog_end"]
