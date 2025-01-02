@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=4 uid="uid://dcp5ow1vr66rn"]
 
-[ext_resource type="PackedScene" uid="uid://dllpe8nup0y6k" path="res://scenes/level_base.tscn" id="1_ixx7u"]
+[ext_resource type="PackedScene" uid="uid://dllpe8nup0y6k" path="res://scenes/levels/level_base.tscn" id="1_ixx7u"]
 [ext_resource type="PackedScene" uid="uid://gkocld8f8in3" path="res://scenes/furnace.tscn" id="2_565wy"]
 [ext_resource type="PackedScene" uid="uid://y4th65ssfqyb" path="res://scenes/cart.tscn" id="3_1sg0m"]
 [ext_resource type="PackedScene" uid="uid://bh1hudpvpu4jf" path="res://scenes/rock.tscn" id="3_j6bv8"]
@@ -9,7 +9,7 @@
 level_steps = 40
 level_carts = 2
 start_timeline = "level_1_timeline"
-next_level = "res://scenes/level_2.tscn"
+next_level = "res://scenes/levels/level_2.tscn"
 level_num = 2
 
 [node name="furnace" parent="." index="0"]

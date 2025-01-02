@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://y4th65ssfqyb"]
+[gd_scene load_steps=19 format=3 uid="uid://y4th65ssfqyb"]
 
 [ext_resource type="Script" path="res://scripts/cart.gd" id="1_ca45l"]
 [ext_resource type="Shader" path="res://shaders/cart.gdshader" id="2_2ic2e"]
@@ -36,6 +36,15 @@ radius = 5.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7rmn3"]
 radius = 8.0
+
+[sub_resource type="Gradient" id="Gradient_0mclc"]
+offsets = PackedFloat32Array(0, 0.75)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_xqbj0"]
+gradient = SubResource("Gradient_0mclc")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
 
 [node name="cart" type="StaticBody2D"]
 z_index = 1
@@ -167,6 +176,10 @@ volume_db = -5.0
 [node name="damage" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("8_sogw4")
 volume_db = -5.0
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+color = Color(1, 0.501961, 0.215686, 1)
+texture = SubResource("GradientTexture2D_xqbj0")
 
 [connection signal="body_entered" from="top_area" to="." method="_on_top_area_body_entered"]
 [connection signal="body_exited" from="top_area" to="." method="_on_top_area_body_exited"]

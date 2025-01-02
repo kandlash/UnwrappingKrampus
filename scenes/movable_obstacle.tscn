@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bkrbnia3b8jjy"]
+[gd_scene load_steps=12 format=3 uid="uid://bkrbnia3b8jjy"]
 
 [ext_resource type="Script" path="res://scripts/movable_obstacle.gd" id="1_857vp"]
 [ext_resource type="Texture2D" uid="uid://clhwcjrfsp4c1" path="res://assets/movable_obstacle.png" id="1_n2nbw"]
@@ -24,6 +24,9 @@ radius = 6.08276
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_w85oh"]
 radius = 6.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7pudm"]
+radius = 8.0
 
 [node name="MovableObstacle" type="StaticBody2D"]
 script = ExtResource("1_857vp")
@@ -70,6 +73,11 @@ target_position = Vector2(0, 16)
 stream = ExtResource("4_aql4f")
 volume_db = -5.0
 pitch_scale = 0.8
+
+[node name="obstacle_area" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="obstacle_area"]
+shape = SubResource("CircleShape2D_7pudm")
 
 [connection signal="body_entered" from="top_area" to="." method="_on_top_area_body_entered"]
 [connection signal="body_exited" from="top_area" to="." method="_on_top_area_body_exited"]

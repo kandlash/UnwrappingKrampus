@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://bkiv7ocs3tnug"]
+[gd_scene load_steps=7 format=3 uid="uid://bkiv7ocs3tnug"]
 
 [ext_resource type="Script" path="res://scripts/success_canvas.gd" id="1_gemtm"]
+[ext_resource type="FontFile" uid="uid://dgjmdwt2o21x" path="res://assets/fonts/Monocraft.otf" id="2_vy846"]
 
 [sub_resource type="Animation" id="Animation_nyhug"]
 length = 0.001
@@ -119,5 +120,6 @@ offset_right = 34.0
 offset_bottom = 123.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_vy846")
 text = "SUCCESS"
 horizontal_alignment = 1

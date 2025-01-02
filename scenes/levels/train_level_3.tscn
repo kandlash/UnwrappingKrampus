@@ -1,13 +1,14 @@
-[gd_scene load_steps=4 format=4 uid="uid://dmfigcidttjtb"]
+[gd_scene load_steps=5 format=4 uid="uid://dmfigcidttjtb"]
 
-[ext_resource type="PackedScene" uid="uid://dllpe8nup0y6k" path="res://scenes/level_base.tscn" id="1_7w5uh"]
+[ext_resource type="PackedScene" uid="uid://dllpe8nup0y6k" path="res://scenes/levels/level_base.tscn" id="1_7w5uh"]
 [ext_resource type="PackedScene" uid="uid://bh1hudpvpu4jf" path="res://scenes/rock.tscn" id="2_iofoe"]
 [ext_resource type="PackedScene" uid="uid://bkrbnia3b8jjy" path="res://scenes/movable_obstacle.tscn" id="3_1v1mi"]
+[ext_resource type="PackedScene" uid="uid://cuhj4oiaa772s" path="res://scenes/torch.tscn" id="4_3ni3j"]
 
 [node name="train_level_3" instance=ExtResource("1_7w5uh")]
 level_steps = 40
 start_timeline = "train_level_3_timeline"
-next_level = "res://scenes/level_1.tscn"
+next_level = "res://scenes/levels/level_1.tscn"
 
 [node name="furnace" parent="." index="0"]
 position = Vector2(80, 112)
@@ -46,3 +47,18 @@ position = Vector2(104, 32)
 
 [node name="rock3" parent="." index="16" instance=ExtResource("2_iofoe")]
 position = Vector2(104, 48)
+
+[node name="torch" parent="." index="18" instance=ExtResource("4_3ni3j")]
+position = Vector2(88, 80)
+
+[node name="torch2" parent="." index="19" instance=ExtResource("4_3ni3j")]
+position = Vector2(184, 80)
+
+[node name="torch3" parent="." index="20" instance=ExtResource("4_3ni3j")]
+position = Vector2(248, 64)
+
+[node name="torch4" parent="." index="21" instance=ExtResource("4_3ni3j")]
+position = Vector2(216, 128)
+
+[node name="torch5" parent="." index="22" instance=ExtResource("4_3ni3j")]
+position = Vector2(120, 112)

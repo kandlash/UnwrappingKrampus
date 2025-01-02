@@ -1,19 +1,28 @@
-[gd_scene load_steps=3 format=3 uid="uid://bhen6wmyofvoh"]
+[gd_scene load_steps=5 format=3 uid="uid://bhen6wmyofvoh"]
 
 [ext_resource type="Script" path="res://scripts/ui.gd" id="1_3neoh"]
 [ext_resource type="FontFile" uid="uid://dgjmdwt2o21x" path="res://assets/fonts/Monocraft.otf" id="2_yilkh"]
 
-[node name="ui" type="Control"]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[sub_resource type="Gradient" id="Gradient_3iqh0"]
+offsets = PackedFloat32Array(0, 0.692568)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_bpvyy"]
+gradient = SubResource("Gradient_3iqh0")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
+[node name="ui" type="CanvasLayer"]
+layer = -1
 script = ExtResource("1_3neoh")
 
-[node name="level_label" type="Label" parent="."]
-layout_mode = 0
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="level_label" type="Label" parent="Control"]
 offset_left = 232.0
 offset_top = 104.0
 offset_right = 309.0
@@ -24,8 +33,7 @@ text = "5"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="steps_label" type="Label" parent="."]
-layout_mode = 2
+[node name="steps_label" type="Label" parent="Control"]
 offset_left = -8.0
 offset_top = 104.0
 offset_right = 69.0
@@ -35,3 +43,13 @@ theme_override_font_sizes/font_size = 12
 text = "5"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="PointLight2D" type="PointLight2D" parent="Control"]
+visible = false
+position = Vector2(32, 128)
+texture = SubResource("GradientTexture2D_bpvyy")
+
+[node name="PointLight2D2" type="PointLight2D" parent="Control"]
+visible = false
+position = Vector2(272, 128)
+texture = SubResource("GradientTexture2D_bpvyy")

@@ -13,6 +13,7 @@ func _process(delta: float) -> void:
 		reload_level()
 
 func _ready() -> void:
+	RenderingServer.set_default_clear_color(Color.BLACK)
 	Globals.level_carts = level_carts
 	Globals.level_steps = level_steps
 	$ui.update_steps()

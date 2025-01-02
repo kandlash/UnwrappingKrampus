@@ -42,4 +42,9 @@ script = ExtResource("9_1ykvf")
 wait_time = 0.8
 one_shot = true
 
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
+position = Vector2(168, 0)
+energy = 0.75
+blend_mode = 1
+
 [connection signal="timeout" from="StartLevelDelay" to="." method="_on_start_level_delay_timeout"]
