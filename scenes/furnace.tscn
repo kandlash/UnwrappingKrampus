@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://gkocld8f8in3"]
+[gd_scene load_steps=10 format=3 uid="uid://gkocld8f8in3"]
 
 [ext_resource type="Script" path="res://scripts/furnace.gd" id="1_bshwy"]
 [ext_resource type="Texture2D" uid="uid://bxa2ma7pso6n5" path="res://assets/fence.png" id="1_lds7l"]
 [ext_resource type="Texture2D" uid="uid://m8gxf3k2rh3d" path="res://assets/shadow.png" id="3_bjrjl"]
 [ext_resource type="Texture2D" uid="uid://dn5im8srs356k" path="res://assets/dust.png" id="4_8w7q4"]
+[ext_resource type="AudioStream" uid="uid://b1x8p3cm0e28i" path="res://assets/audio/furnace_sound.wav" id="5_a2xgw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oqfns"]
 size = Vector2(16, 32)
@@ -58,5 +59,9 @@ color = Color(0.27451, 1, 0.776471, 1)
 energy = 0.8
 texture = SubResource("GradientTexture2D_48rlw")
 texture_scale = 0.6
+
+[node name="furnace_sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_a2xgw")
+volume_db = 5.0
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

@@ -28,3 +28,4 @@ func _on_candle_area_area_entered(area: Area2D) -> void:
 		is_broken = true
 		$PointLight2D.enabled = false
 		$candle_broke.play()
+		$candle_broke2.play()

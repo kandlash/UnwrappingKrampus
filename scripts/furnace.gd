@@ -13,6 +13,7 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 	$PointLight2D.enabled = false
 	$CPUParticles2D.emitting = false
 	$shadow.visible = false
+	$furnace_sound.play()
 	var tween = create_tween()
 	tween.tween_property(cart,
 	 "position",

@@ -171,7 +171,7 @@ texture = ExtResource("6_qxjyu")
 
 [node name="cart_stop" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("7_jnol7")
-volume_db = -5.0
+volume_db = -7.0
 
 [node name="damage" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("8_sogw4")

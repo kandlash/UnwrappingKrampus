@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://cuhj4oiaa772s" path="res://scenes/torch.tscn" id="3_rdv2g"]
 
 [node name="Level_2" instance=ExtResource("1_cwsxx")]
-level_steps = 59
+level_steps = 63
 start_timeline = "test_timeline2"
 next_level = "res://scenes/levels/level_1.tscn"
 level_num = 1

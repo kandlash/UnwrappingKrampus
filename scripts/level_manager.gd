@@ -65,6 +65,7 @@ func update_carts():
 
 func start_next_level():
 	set_process(false)
+	WinSoundPlayer.play_sound()
 	SuccessTransition.transition(level_num)
 	await SuccessTransition.on_transition_finished
 	get_tree().change_scene_to_file(next_level)
