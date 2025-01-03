@@ -1,9 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://d206d61a3wyu7"]
+[gd_scene load_steps=13 format=3 uid="uid://d206d61a3wyu7"]
 
 [ext_resource type="Script" path="res://santa_boss.gd" id="1_pt26p"]
 [ext_resource type="PackedScene" uid="uid://biyhe8708ekvf" path="res://scenes/santa_attack.tscn" id="2_072o3"]
 [ext_resource type="Texture2D" uid="uid://dya81qxm1vppd" path="res://assets/santa-boss.png" id="2_wieqm"]
 [ext_resource type="AudioStream" uid="uid://dq2ingyeob5qo" path="res://assets/audio/santa_damage.wav" id="4_0pxoj"]
+[ext_resource type="Texture2D" uid="uid://djhoj8ii37x8n" path="res://assets/santa_fuck.png" id="5_l02g5"]
 
 [sub_resource type="Gradient" id="Gradient_22m5e"]
 offsets = PackedFloat32Array(0, 0.692568)
@@ -28,6 +29,18 @@ tracks/0/keys = {
 "update": 0,
 "values": [Vector2(0, 0)]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
 
 [sub_resource type="Animation" id="Animation_0auxy"]
 resource_name = "idle"
@@ -46,9 +59,38 @@ tracks/0/keys = {
 "values": [Vector2(0, 0), Vector2(0, 15), Vector2(0, 0)]
 }
 
+[sub_resource type="Animation" id="Animation_8lusl"]
+resource_name = "death"
+length = 7.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 6.86667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 120)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 6.83333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_bw722"]
 _data = {
 "RESET": SubResource("Animation_ura1y"),
+"death": SubResource("Animation_8lusl"),
 "idle": SubResource("Animation_0auxy")
 }
 
@@ -122,5 +164,17 @@ one_shot = true
 [node name="damage" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_0pxoj")
 
+[node name="Fuck" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(0, 96)
+texture = ExtResource("5_l02g5")
+offset = Vector2(0, 32)
+
+[node name="end_game_delay" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 [connection signal="area_entered" from="santa_area" to="." method="_on_santa_area_area_entered"]
 [connection signal="timeout" from="attack_timer" to="." method="_on_attack_timer_timeout"]
+[connection signal="timeout" from="end_game_delay" to="." method="_on_end_game_delay_timeout"]

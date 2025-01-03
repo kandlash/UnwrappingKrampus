@@ -1,0 +1,13 @@
+join test_character center
+test_character: Oh, it seems [wave amp=15.0 freq=2.0]he won’t hear us here…[/wave]
+- What?
+- ...
+test_character: Yes, uh… well… [wave amp=10.0 freq=3.0]thank you again![/wave]
+test_character: I [shake rate=25 level=2 connected=1] promise[/shake] I’ll get you out of here soon….
+- I don’t get it, explain!
+- Whatever, more carts!
+test_character: Oh, I have to run!
+[shake rate=10.0 level=2 connected=1]*Krampus rushes off, dropping a mask.*[/shake]
+- What the hell?
+- Ohhh,c ool mask!
+[signal arg="end"]

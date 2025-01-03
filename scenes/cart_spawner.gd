@@ -26,7 +26,7 @@ func _on_spawn_delay_timeout() -> void:
 	cart.on_boss = true
 	randomize()
 	var chance = randi_range(0, 100)
-	if  chance <= 20:
+	if  chance <= 30:
 		cart.facing_left_right = true
 	else:
 		cart.facing_left_right = false

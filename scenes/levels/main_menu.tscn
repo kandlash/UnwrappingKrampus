@@ -1,0 +1,83 @@
+[gd_scene load_steps=6 format=3 uid="uid://cru1wnyrb82ue"]
+
+[ext_resource type="FontFile" uid="uid://dgjmdwt2o21x" path="res://assets/fonts/Monocraft.otf" id="1_1fshw"]
+[ext_resource type="Script" path="res://main_menu.gd" id="1_aiu0k"]
+[ext_resource type="AudioStream" uid="uid://d3q4gjks7wqc0" path="res://assets/audio/perkussiya-odinochnyiy-zvuk.mp3" id="3_hsqjb"]
+[ext_resource type="AudioStream" uid="uid://bxhs1aw3qfao1" path="res://assets/audio/perkussiya-odinochnyiy-kompyuternyiy-priglushennyiy.mp3" id="4_oxf48"]
+
+[sub_resource type="Theme" id="Theme_71hm4"]
+
+[node name="main_menu" type="CanvasLayer"]
+script = ExtResource("1_aiu0k")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PlayBt" type="Button" parent="Control/VBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_71hm4")
+theme_override_fonts/font = ExtResource("1_1fshw")
+text = "Play"
+
+[node name="ExitBt" type="Button" parent="Control/VBoxContainer"]
+layout_mode = 2
+text = "EXIT"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Control"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -82.0
+offset_right = 82.0
+offset_bottom = 48.0
+grow_horizontal = 2
+theme_override_fonts/normal_font = ExtResource("1_1fshw")
+bbcode_enabled = true
+text = "[center]Unwrapping [shake rate=15 level=2 connected=1][color=red]Krampus[/color][/shake]"
+fit_content = true
+
+[node name="hover_player" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_hsqjb")
+volume_db = -5.0
+
+[node name="press_player" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_oxf48")
+
+[node name="exit_delay" type="Timer" parent="."]
+wait_time = 0.7
+one_shot = true
+
+[connection signal="mouse_entered" from="Control/VBoxContainer/PlayBt" to="." method="_on_play_bt_mouse_entered"]
+[connection signal="pressed" from="Control/VBoxContainer/PlayBt" to="." method="_on_play_bt_pressed"]
+[connection signal="mouse_entered" from="Control/VBoxContainer/ExitBt" to="." method="_on_exit_bt_mouse_entered"]
+[connection signal="pressed" from="Control/VBoxContainer/ExitBt" to="." method="_on_exit_bt_pressed"]
+[connection signal="timeout" from="exit_delay" to="." method="_on_exit_delay_timeout"]

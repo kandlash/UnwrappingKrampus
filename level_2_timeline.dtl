@@ -1,0 +1,10 @@
+join test_character center
+test_character: Oh, [wave amp=20.0 freq=2.0]thank you so much![/wave] What would I do without you?
+test_character: Oh, I mean....
+test_character: [shake rate=10.0 level=3.0]You’re not bad for a mere human![/shake]
+- Alright, let me out of here!
+	test_character: I... Sor...
+	test_character: [shake rate=10.0 level=3.0]I’m not letting you go![/shake]
+- Let’s do more carts!
+	test_character: [wave amp=25.0 freq=3.0][color=red]Thank you!!![/color][/wave]
+[signal arg="end"]

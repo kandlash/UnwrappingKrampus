@@ -80,7 +80,7 @@ func start_next_level():
 	get_tree().change_scene_to_file(next_level)
 
 func _on_dialogic_signal(argument: String):
-	if argument == "level_end":
+	if argument == "level_end" or argument == "end":
 		start_next_level()
 	elif argument == "dialog_end":
 		set_process(true)
@@ -93,12 +93,12 @@ func _on_start_level_delay_timeout() -> void:
 
 func _on_camera_trigger_area_entered(area: Area2D) -> void:
 	if area.name == "player_area":
-		var position_x =  Vector2(get_node(camera_trigger_possitions[current_trigger_index]).position.x, 0)
+		var position_x =  Vector2(get_node(camera_trigger_possitions[current_trigger_index]).global_position.x-50, 0)
 		var tween = create_tween()
 		tween.tween_property(
 			$camera_catcher,
 			"position",
-			position_x/2,
+			position_x,
 			1
 		)
 		if current_trigger_index+1 < len(camera_trigger_possitions):

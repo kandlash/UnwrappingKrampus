@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="UnwrappingKrampus"
-run/main_scene="res://scenes/levels/train_level_1.tscn"
+run/main_scene="res://scenes/levels/main_menu.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 boot_splash/bg_color=Color(0, 0, 0, 1)
 config/icon="res://assets/icon.svg"
@@ -29,10 +29,17 @@ MusicPlayer="*res://scenes/music_player.tscn"
 [dialogic]
 
 directories/dch_directory={
+"krampus-tan": "res://dialogic/characters/krampus-tan.dch",
 "test_character": "res://dialogic/characters/test_character.dch"
 }
 directories/dtl_directory={
+"level_11_timeline": "res://dialogic/timelines/level_11_timeline.dtl",
 "level_1_timeline": "res://dialogic/timelines/level_1_timeline.dtl",
+"level_2_timeline": "res://level_2_timeline.dtl",
+"level_6_timeline": "res://dialogic/timelines/level_6_timeline.dtl",
+"level_7_timeline": "res://dialogic/timelines/level_7_timeline.dtl",
+"level_8_timeline": "res://dialogic/timelines/level_8_timeline.dtl",
+"level_9_timeline": "res://dialogic/timelines/level_9_timeline.dtl",
 "test_timeline": "res://dialogic/timelines/test_timeline.dtl",
 "test_timeline2": "res://dialogic/timelines/test_timeline2.dtl",
 "train_level_1_timeline": "res://dialogic/timelines/train_level_1_timeline.dtl",
@@ -125,4 +132,5 @@ reload={
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
+textures/vram_compression/import_etc2_astc=true
 camera/bg_color=Color(0.14, 0.14, 0.14, 1)

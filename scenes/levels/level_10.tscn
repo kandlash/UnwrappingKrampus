@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=4 uid="uid://d4h8b0jgesugk"]
+[gd_scene load_steps=13 format=4 uid="uid://d4h8b0jgesugk"]
 
 [ext_resource type="PackedScene" uid="uid://c6lyrsuq40mig" path="res://scenes/test_level.tscn" id="1_dhsl2"]
 [ext_resource type="Script" path="res://scripts/level_manager.gd" id="1_pcb51"]
@@ -8,14 +8,19 @@
 [ext_resource type="Script" path="res://scripts/dialogue_manager.gd" id="6_eok7c"]
 [ext_resource type="PackedScene" uid="uid://d206d61a3wyu7" path="res://scenes/santa_boss.tscn" id="7_pbp3l"]
 [ext_resource type="PackedScene" uid="uid://bma221qr5qg5k" path="res://scenes/cart_spawner.tscn" id="9_gnecp"]
+[ext_resource type="PackedScene" uid="uid://cubody0tud4f" path="res://scenes/candle.tscn" id="10_8b154"]
 [ext_resource type="PackedScene" uid="uid://y4th65ssfqyb" path="res://scenes/cart.tscn" id="10_tevcn"]
+[ext_resource type="PackedScene" uid="uid://cuhj4oiaa772s" path="res://scenes/torch.tscn" id="11_16d6r"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ykx6q"]
 size = Vector2(160, 16)
 
 [node name="level_10" type="Node2D"]
 script = ExtResource("1_pcb51")
-level_steps = 100000
+level_steps = 99999
+next_level = "res://scenes/levels/level_11.tscn"
+level_num = -999
+level_text = "[shake rate=50 level=5 connected=1][color=red]SANTA IS EVEL[/color][/shake]"
 is_boss_level = true
 
 [node name="TileMapLayer" parent="." instance=ExtResource("1_dhsl2")]
@@ -23,14 +28,10 @@ position = Vector2(120, 64)
 tile_map_data = PackedByteArray("AAD9/wAAAAAAAAEAAAD9/wEAAAAAAAEAAAD9/wIAAAAAAAEAAAD9/wMAAAAAAAEAAAD+/wAAAAABAAEAAAD+/wEAAAABAAEAAAD+/wIAAAABAAEAAAD+/wMAAAABAAEAAAD//wAAAAABAAEAAAD//wEAAAABAAEAAAD//wIAAAABAAEAAAD//wMAAAABAAEAAAAAAAAAAAABAAEAAAAAAAEAAAABAAEAAAAAAAIAAAABAAEAAAAAAAMAAAABAAEAAAABAAAAAAABAAEAAAABAAEAAAABAAEAAAABAAIAAAABAAEAAAABAAMAAAABAAEAAAACAAAAAAABAAEAAAACAAEAAAABAAEAAAACAAIAAAABAAEAAAACAAMAAAABAAEAAAADAAAAAAABAAEAAAADAAEAAAABAAEAAAADAAMAAAABAAEAAAD9/wQAAAAAAAEAAAD+/wQAAAABAAEAAAD//wQAAAABAAEAAAAAAAQAAAABAAEAAAABAAQAAAABAAEAAAACAAQAAAABAAEAAAADAAQAAAABAAEAAAADAAIAAAABAAEAAAAGAAIAAAACAAEAAAAFAAIAAAABAAEAAAAEAAIAAAABAAEAAAAEAAEAAAABAAEAAAAEAAAAAAABAAEAAAAGAAEAAAACAAEAAAAFAAEAAAABAAEAAAAFAAAAAAABAAEAAAAGAAAAAAACAAEAAAAGAAMAAAACAAEAAAAFAAMAAAABAAEAAAAEAAMAAAABAAEAAAAEAAQAAAABAAEAAAAFAAQAAAABAAEAAAAGAAQAAAACAAEAAAAEAAUAAAABAAIAAAADAAUAAAABAAIAAAACAAUAAAABAAIAAAABAAUAAAABAAIAAAAAAAUAAAABAAIAAAD//wUAAAABAAIAAAD+/wUAAAABAAIAAAAFAAUAAAABAAIAAAD9/wUAAAAAAAIAAAAGAAUAAAACAAIAAAA=")
 
 [node name="ui" parent="." instance=ExtResource("2_86jfr")]
-level_num = 10
+level_num = -999
 
 [node name="Player" parent="." instance=ExtResource("3_edy1w")]
 position = Vector2(152, 128)
-
-[node name="Camera2D" type="Camera2D" parent="."]
-anchor_mode = 0
-script = ExtResource("5_0h724")
 
 [node name="DialogueManager" type="Node2D" parent="."]
 script = ExtResource("6_eok7c")
@@ -44,6 +45,7 @@ blend_mode = 1
 position = Vector2(104, 96)
 cart_scene = ExtResource("10_tevcn")
 time_min = 10.0
+time_max = 20.0
 
 [node name="cart_spawner2" parent="." instance=ExtResource("9_gnecp")]
 position = Vector2(136, 96)
@@ -54,6 +56,7 @@ time_min = 10.0
 position = Vector2(168, 96)
 cart_scene = ExtResource("10_tevcn")
 time_min = 10.0
+time_max = 20.0
 
 [node name="cart_spawner4" parent="." instance=ExtResource("9_gnecp")]
 position = Vector2(200, 96)
@@ -68,5 +71,37 @@ shape = SubResource("RectangleShape2D_ykx6q")
 
 [node name="santa-boss" parent="." instance=ExtResource("7_pbp3l")]
 position = Vector2(152, 0)
-time_min = 2.0
+time_max = 2.0
 min_attack = 2
+max_attack = 5
+
+[node name="camera_catcher" type="Node2D" parent="."]
+
+[node name="Camera2D" type="Camera2D" parent="camera_catcher"]
+anchor_mode = 0
+script = ExtResource("5_0h724")
+
+[node name="candle" parent="." instance=ExtResource("10_8b154")]
+position = Vector2(88, 72)
+candle_amount = 3
+
+[node name="candle2" parent="." instance=ExtResource("10_8b154")]
+position = Vector2(120, 72)
+candle_amount = 2
+
+[node name="candle3" parent="." instance=ExtResource("10_8b154")]
+position = Vector2(152, 72)
+candle_amount = 4
+
+[node name="candle4" parent="." instance=ExtResource("10_8b154")]
+position = Vector2(184, 72)
+
+[node name="candle5" parent="." instance=ExtResource("10_8b154")]
+position = Vector2(216, 72)
+candle_amount = 3
+
+[node name="torch" parent="." instance=ExtResource("11_16d6r")]
+position = Vector2(88, 144)
+
+[node name="torch2" parent="." instance=ExtResource("11_16d6r")]
+position = Vector2(216, 144)

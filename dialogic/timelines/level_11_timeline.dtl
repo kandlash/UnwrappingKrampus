@@ -1,0 +1,15 @@
+join krampus-tan center
+krampus-tan: ...
+krampus-tan: [font_size=12][color=red]...[/color][/font_size]
+krampus-tan: [font_size=14][color=red][shake rate=25 level=3 connected=1]OMG![/shake][/color][/font_size]
+krampus-tan: [font_size=12][rainbow freq=1.0 sat=0.8 val=0.8]WE DID IT![/rainbow][/font_size]
+krampus-tan: [font_size=14][color=red][shake rate=25 level=3 connected=1]YOU DID IT![/shake][/color][/font_size]
+krampus-tan: So... am I....
+krampus-tan: [font_size=14][wave frequency=25 amp=3 connected=1]FREE?..[/wave][/font_size]
+krampus-tan: I don't really know what to say...
+krampus-tan: Big
+krampus-tan: [font_size=10]Big[/font_size]
+krampus-tan: [font_size=14][color=red]BIG[/color][/font_size]
+krampus-tan: [font_size=12][rainbow freq=1.0 sat=0.8 val=0.8]THANK YOU[/rainbow][/font_size]
+Thank you for playing!
+[signal arg="dialog_end"]

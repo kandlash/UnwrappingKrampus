@@ -1,0 +1,12 @@
+join test_character center
+test_character: I want to…
+- What the hell is with all these bones and blood!
+	test_character: Uh… well…
+	test_character: Yes, these are
+	test_character: the [shake rate=25 level=3][color=red]dead people[/color][/shake] I dragged down here!
+	test_character: [wave amp=10.0 freq=3.0]Ahem...[/wave]
+	test_character: [shake rate=30.0 level=3]Fear me, mortal!!![/shake]
+- I kind of like it here!
+	test_character: [wave amp=10.0 freq=3.0]Woah....[/wave]
+	test_character: Great! Then there’s even more where that came from…
+[signal arg="end"]

@@ -7,6 +7,8 @@
 
 [node name="level_8" instance=ExtResource("1_rbxpp")]
 level_steps = 100
+end_timeline = "level_8_timeline"
+next_level = "res://scenes/levels/level_9.tscn"
 level_num = 8
 level_text = "Level 8"
 

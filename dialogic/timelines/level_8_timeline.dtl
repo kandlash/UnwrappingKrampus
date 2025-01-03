@@ -1,0 +1,24 @@
+join test_character center
+[shake rate=10.0 level=2 connected=1]*from the dark*[/shake]
+Uh… [wave frequency=25 amp=5 connected=1]Could you...[/wave]
+give me back my [color=red]mask…[/color]
+- Why do you wear a mask?
+	Well… uh…
+	[wave amp=20.0 freq=3.0]*steps out of the shadows*[/wave]
+	krampus-tan: I don’t look very nice without it!
+	krampus-tan: [wave amp=20.0 freq=3.0]... or so [color=red]Santa[/color] says… [/wave]
+	krampus-tan: Oh, I mean!
+- Nope, it’s mine now!
+	What? Oh, come on… [wave amp=20.0 freq=3.0][color=red]please[/color][/wave] give it back…
+	[wave amp=20.0 freq=3.0]*steps out of the shadows*[/wave]
+	krampus-tan: I don’t look very nice without it!
+	krampus-tan: [wave amp=20.0 freq=3.0]... or so [color=red]Santa[/color] says… [/wave]
+	krampus-tan: Oh, I mean!
+[wave amp=20.0 freq=3.0]*Krampus is a girl???*[/wave]
+[wait_input hide_text="false"]
+- Whoa...
+- Whoa...
+krampus-tan: Well, uh…
+krampus-tan: [shake rate=15.0 level=5.0]you’re an idiot![/shake]
+[wave amp=25.0 freq=3.5]*runs away*[/wave]
+[signal arg="end"]
