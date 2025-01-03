@@ -21,8 +21,7 @@ var max_roll = 0.1
 
 # Built-in function called first when node is loaded
 func _ready():
-	# Randomize seed values for functions that return random values
-	# Required since the same seed value will result in the same number of values obtained
+	
 	randomize()
 
 

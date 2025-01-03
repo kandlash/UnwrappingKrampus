@@ -15,7 +15,8 @@ size = Vector2(160, 16)
 
 [node name="level_10" type="Node2D"]
 script = ExtResource("1_pcb51")
-level_steps = 100
+level_steps = 100000
+is_boss_level = true
 
 [node name="TileMapLayer" parent="." instance=ExtResource("1_dhsl2")]
 position = Vector2(120, 64)
@@ -35,7 +36,6 @@ script = ExtResource("5_0h724")
 script = ExtResource("6_eok7c")
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
-visible = false
 position = Vector2(168, 0)
 energy = 0.8
 blend_mode = 1
@@ -44,25 +44,21 @@ blend_mode = 1
 position = Vector2(104, 96)
 cart_scene = ExtResource("10_tevcn")
 time_min = 10.0
-time_max = 20.0
 
 [node name="cart_spawner2" parent="." instance=ExtResource("9_gnecp")]
 position = Vector2(136, 96)
 cart_scene = ExtResource("10_tevcn")
 time_min = 10.0
-time_max = 20.0
 
 [node name="cart_spawner3" parent="." instance=ExtResource("9_gnecp")]
 position = Vector2(168, 96)
 cart_scene = ExtResource("10_tevcn")
 time_min = 10.0
-time_max = 20.0
 
 [node name="cart_spawner4" parent="." instance=ExtResource("9_gnecp")]
 position = Vector2(200, 96)
 cart_scene = ExtResource("10_tevcn")
 time_min = 10.0
-time_max = 20.0
 
 [node name="santa_collision" type="StaticBody2D" parent="."]
 position = Vector2(152, 32)
@@ -72,3 +68,5 @@ shape = SubResource("RectangleShape2D_ykx6q")
 
 [node name="santa-boss" parent="." instance=ExtResource("7_pbp3l")]
 position = Vector2(152, 0)
+time_min = 2.0
+min_attack = 2

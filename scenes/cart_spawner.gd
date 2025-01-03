@@ -23,9 +23,10 @@ func _process(delta: float) -> void:
 func _on_spawn_delay_timeout() -> void:
 	var cart = cart_scene.instantiate()
 	cart.position = position
+	cart.on_boss = true
 	randomize()
 	var chance = randi_range(0, 100)
-	if  chance <= 10:
+	if  chance <= 20:
 		cart.facing_left_right = true
 	else:
 		cart.facing_left_right = false

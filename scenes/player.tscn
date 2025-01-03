@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://dg37kjby5ixg0"]
+[gd_scene load_steps=17 format=3 uid="uid://dg37kjby5ixg0"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_di332"]
 [ext_resource type="Texture2D" uid="uid://diy8483daaxk1" path="res://assets/testplayer.png" id="2_aa57q"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://ce1qartghrxyg" path="res://assets/animations/player_animation2.png" id="7_hasso"]
 [ext_resource type="Texture2D" uid="uid://c5edi7xkq7gcm" path="res://assets/animations/player_animation3.png" id="8_cxq3r"]
 [ext_resource type="Texture2D" uid="uid://f8kqh3r0ongy" path="res://assets/animations/player_animation4.png" id="9_knnpa"]
+[ext_resource type="AudioStream" uid="uid://dcrf0ygxmpn1j" path="res://assets/audio/player_damage.mp3" id="10_5n3hk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_44k6k"]
 size = Vector2(16, 16)
@@ -116,4 +117,14 @@ energy = 0.5
 texture = SubResource("GradientTexture2D_iipgi")
 texture_scale = 0.6
 
+[node name="damage_player" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("10_5n3hk")
+volume_db = 5.0
+
+[node name="stan_delay" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
 [connection signal="timeout" from="start_delay" to="." method="_on_start_delay_timeout"]
+[connection signal="area_entered" from="player_area" to="." method="_on_player_area_area_entered"]
+[connection signal="timeout" from="stan_delay" to="." method="_on_stan_delay_timeout"]

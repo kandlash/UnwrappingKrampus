@@ -7,6 +7,9 @@ extends Node2D
 @export var next_level : String
 @export var level_num : int
 @export var level_text: String = "Level 0"
+@export var is_boss_level = false
+@export var camera_trigger_possitions : Array = []
+var current_trigger_index = 0
 # Called when the node enters the scene tree for the first time.
 
 func _process(delta: float) -> void:
@@ -20,6 +23,10 @@ func _ready() -> void:
 	LevelText.play_animation(level_text)
 	$ui.update_steps()
 	Dialogic.signal_event.connect(_on_dialogic_signal)
+	if not is_boss_level:
+		MusicPlayer.play_music()
+	else:
+		MusicPlayer.play_boss_music()
 	if start_timeline != "None":
 		$DialogueManager.play_diaologue(start_timeline)
 	else:
@@ -82,3 +89,18 @@ func _on_dialogic_signal(argument: String):
 
 func _on_start_level_delay_timeout() -> void:
 	start_next_level()
+
+
+func _on_camera_trigger_area_entered(area: Area2D) -> void:
+	if area.name == "player_area":
+		var position_x =  Vector2(get_node(camera_trigger_possitions[current_trigger_index]).position.x, 0)
+		var tween = create_tween()
+		tween.tween_property(
+			$camera_catcher,
+			"position",
+			position_x/2,
+			1
+		)
+		if current_trigger_index+1 < len(camera_trigger_possitions):
+			current_trigger_index += 1
+			$camera_trigger.position = get_node(camera_trigger_possitions[current_trigger_index]).position

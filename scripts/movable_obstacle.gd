@@ -7,7 +7,7 @@ var step : int
 var direction := Vector2.ZERO
 var can_be_moved = false
 @onready var raycast := $RayCast2D
-@onready var camera := $"../Camera2D"
+@onready var camera := $"../camera_catcher/Camera2D"
 
 func _ready() -> void:
 	step = tile_size * step_coof

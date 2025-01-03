@@ -5,7 +5,8 @@ var can_be_moved = false
 var direction := Vector2.ZERO
 var tile_size = 16
 var raydistance = 200
-@onready var camera := $"../Camera2D"
+var on_boss = false
+@onready var camera := $"../camera_catcher/Camera2D"
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	if facing_left_right:
@@ -86,7 +87,8 @@ func end_cart_move():
 	$cart_stop.play()
 	camera.set_shake(0.15)
 	get_parent().get_node("Player").set_physics_process(true)
-	get_parent().update_steps()
+	if not on_boss:
+		get_parent().update_steps()
 	
 	if facing_left_right:
 		enable_top_down()

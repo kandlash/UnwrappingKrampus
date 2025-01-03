@@ -39,6 +39,8 @@ func _on_santa_area_area_entered(area: Area2D) -> void:
 		cart.end_cart_move()
 		cart.queue_free()
 		health -= 50
+		$damage.play()
+		get_parent().get_node("camera_catcher/Camera2D").set_shake(0.2)
 		if health <= 0:
 			print('santa is dead')
 

@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://d206d61a3wyu7"]
+[gd_scene load_steps=11 format=3 uid="uid://d206d61a3wyu7"]
 
 [ext_resource type="Script" path="res://santa_boss.gd" id="1_pt26p"]
 [ext_resource type="PackedScene" uid="uid://biyhe8708ekvf" path="res://scenes/santa_attack.tscn" id="2_072o3"]
 [ext_resource type="Texture2D" uid="uid://dya81qxm1vppd" path="res://assets/santa-boss.png" id="2_wieqm"]
+[ext_resource type="AudioStream" uid="uid://dq2ingyeob5qo" path="res://assets/audio/santa_damage.wav" id="4_0pxoj"]
 
 [sub_resource type="Gradient" id="Gradient_22m5e"]
 offsets = PackedFloat32Array(0, 0.692568)
@@ -117,6 +118,9 @@ position = Vector2(64, 56)
 
 [node name="attack_timer" type="Timer" parent="."]
 one_shot = true
+
+[node name="damage" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_0pxoj")
 
 [connection signal="area_entered" from="santa_area" to="." method="_on_santa_area_area_entered"]
 [connection signal="timeout" from="attack_timer" to="." method="_on_attack_timer_timeout"]

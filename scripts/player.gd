@@ -7,6 +7,7 @@ var is_moving = false
 var tile_size = 16
 var particles_rotation = 0
 @onready var start_delay := $start_delay
+@export var health = 5
 
 func _ready() -> void:
 	set_physics_process(false)
@@ -60,4 +61,21 @@ func set_move_false():
 
 
 func _on_start_delay_timeout() -> void:
+	set_physics_process(true)
+
+
+func _on_player_area_area_entered(area: Area2D) -> void:
+	if area.name == "attack_area":
+		health -= 1
+		$damage_player.play()
+		set_process(false)
+		set_physics_process(false)
+		$stan_delay.start()
+		if health <= 0:
+			get_parent().reload_level()
+
+
+func _on_stan_delay_timeout() -> void:
+	
+	set_process(true)
 	set_physics_process(true)
