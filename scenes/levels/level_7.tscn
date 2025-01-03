@@ -127,5 +127,10 @@ candle_amount = 3
 position = Vector2(248, 144)
 candle_amount = 3
 
+[node name="restart_delay" type="Timer" parent="." index="33"]
+wait_time = 0.3
+one_shot = true
+
 [connection signal="area_entered" from="death_area" to="death_area" method="_on_area_entered"]
 [connection signal="area_entered" from="death_area2" to="death_area2" method="_on_area_entered"]
+[connection signal="timeout" from="restart_delay" to="death_area" method="_on_restart_delay_timeout"]

@@ -94,10 +94,17 @@ position = Vector2(136, 112)
 position = Vector2(200, 96)
 
 [node name="torch2" parent="." index="27" instance=ExtResource("7_w1d8f")]
-position = Vector2(248, 48)
+position = Vector2(312, 32)
 
 [node name="torch3" parent="." index="28" instance=ExtResource("7_w1d8f")]
 position = Vector2(152, 32)
 
 [node name="torch4" parent="." index="29" instance=ExtResource("7_w1d8f")]
 position = Vector2(72, 96)
+
+[node name="candle5" parent="." index="30" instance=ExtResource("6_d3qhf")]
+position = Vector2(216, 136)
+
+[node name="candle6" parent="." index="31" instance=ExtResource("6_d3qhf")]
+position = Vector2(216, 120)
+candle_amount = 2
