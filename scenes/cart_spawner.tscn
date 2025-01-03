@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://bma221qr5qg5k"]
+
+[ext_resource type="Script" path="res://scenes/cart_spawner.gd" id="1_4fbf4"]
+[ext_resource type="Texture2D" uid="uid://bxa2ma7pso6n5" path="res://assets/fence.png" id="1_rusvu"]
+
+[node name="cart_spawner" type="Node2D"]
+z_index = -1
+script = ExtResource("1_4fbf4")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-8, 0)
+texture = ExtResource("1_rusvu")
+
+[node name="spawn_delay" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="timeout" from="spawn_delay" to="." method="_on_spawn_delay_timeout"]
