@@ -64,7 +64,6 @@ func update_carts():
 			set_process(false)
 	else:
 		Globals.level_carts -= 1
-	print(Globals.level_carts)
 
 func start_next_level():
 	set_process(false)

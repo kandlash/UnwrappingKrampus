@@ -43,9 +43,17 @@ func enable_top_down():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if Input.is_action_just_pressed("action") and can_be_moved:
+	if not can_be_moved:
+		return
+		
+	if Input.is_action_just_pressed("move_up") and direction == Vector2.UP:
 		move()
-
+	elif Input.is_action_just_pressed("move_down") and direction == Vector2.DOWN:
+		move()
+	elif Input.is_action_just_pressed("move_left") and direction == Vector2.LEFT:
+		move()
+	elif Input.is_action_just_pressed("move_right") and direction == Vector2.RIGHT:
+		move()
 
 func move():
 

@@ -1,0 +1,58 @@
+[gd_scene load_steps=4 format=3 uid="uid://cl4wbf4jcoxys"]
+
+[ext_resource type="PackedScene" uid="uid://dllpe8nup0y6k" path="res://scenes/levels/level_base.tscn" id="1_rbxpp"]
+[ext_resource type="PackedScene" uid="uid://bh1hudpvpu4jf" path="res://scenes/coal_obstacle.tscn" id="2_x74rc"]
+[ext_resource type="PackedScene" uid="uid://bkrbnia3b8jjy" path="res://scenes/movable_obstacle.tscn" id="3_fnt4l"]
+
+[node name="level_8" instance=ExtResource("1_rbxpp")]
+level_steps = 100
+level_num = 8
+level_text = "Level 8"
+
+[node name="Player" parent="." index="1"]
+position = Vector2(168, 32)
+
+[node name="rock" parent="." index="2"]
+position = Vector2(152, 32)
+
+[node name="rock2" parent="." index="3" instance=ExtResource("2_x74rc")]
+position = Vector2(152, 48)
+
+[node name="rock3" parent="." index="4" instance=ExtResource("2_x74rc")]
+position = Vector2(168, 48)
+
+[node name="rock4" parent="." index="5" instance=ExtResource("2_x74rc")]
+position = Vector2(184, 48)
+
+[node name="rock6" parent="." index="6" instance=ExtResource("2_x74rc")]
+position = Vector2(184, 80)
+
+[node name="rock7" parent="." index="7" instance=ExtResource("2_x74rc")]
+position = Vector2(232, 64)
+
+[node name="rock8" parent="." index="8" instance=ExtResource("2_x74rc")]
+position = Vector2(232, 48)
+
+[node name="rock9" parent="." index="9" instance=ExtResource("2_x74rc")]
+position = Vector2(232, 32)
+
+[node name="rock10" parent="." index="10" instance=ExtResource("2_x74rc")]
+position = Vector2(200, 96)
+
+[node name="cart" parent="." index="11"]
+position = Vector2(120, 80)
+
+[node name="ui" parent="." index="13"]
+level_num = 8
+
+[node name="DirectionalLight2D" parent="." index="17"]
+visible = false
+
+[node name="MovableObstacle" parent="." index="18" instance=ExtResource("3_fnt4l")]
+position = Vector2(184, 32)
+
+[node name="MovableObstacle2" parent="." index="19" instance=ExtResource("3_fnt4l")]
+position = Vector2(200, 64)
+
+[node name="MovableObstacle3" parent="." index="20" instance=ExtResource("3_fnt4l")]
+position = Vector2(168, 64)
