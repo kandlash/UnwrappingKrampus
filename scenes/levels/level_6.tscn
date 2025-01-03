@@ -11,6 +11,7 @@
 [node name="level_6" instance=ExtResource("1_qiu7k")]
 level_steps = 100
 level_carts = 3
+next_level = "res://scenes/levels/level_7.tscn"
 level_num = 6
 level_text = "Level 6: [color=red]Two[/color] at a [color=red]Time[/color]"
 
