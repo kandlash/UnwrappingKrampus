@@ -49,7 +49,7 @@ func _process(delta: float) -> void:
 
 func move():
 
-	var distance
+	var distance = 0
 	$RayCast2D.target_position = direction * raydistance
 	$RayCast2D.force_raycast_update()
 	if $RayCast2D.is_colliding():

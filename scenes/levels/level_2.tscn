@@ -7,7 +7,7 @@
 
 [node name="Level_2" instance=ExtResource("1_cwsxx")]
 level_steps = 63
-next_level = "res://scenes/levels/level_1.tscn"
+next_level = "res://scenes/levels/level_6.tscn"
 level_num = 5
 level_text = "Level 5: Just level, [wave frequency=50 amp=8 connected=1]I guess...[/wave]"
 
